@@ -21,7 +21,8 @@
 <meta name="twitter:description" content="رحلة كائنان ثلجيان نحو الشمس. الأربعاء 24.06.2026 — القصر الثقافي، الناصرة">
 <meta name="twitter:image" content="https://your-domain.com/images/poster.jpg">
 
-<link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero.jpg" media="(min-width: 769px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-mobile.jpg" media="(max-width: 768px)" fetchpriority="high">
 <link rel="stylesheet" href="tailwind.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -144,18 +145,29 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
     url('images/hero.jpg');
   background-size: cover; background-position: center; background-attachment: fixed;
 }
+/* Mobile scroll-zoom hero: full cast shown small at top, zooms in as you scroll */
+#hero-clip, #hero-zoom-scrim { display: none; }
 @media (max-width: 768px) {
-  .hero-bg {
-    background-attachment: scroll;
-    background-image:
-      radial-gradient(ellipse 100% 48% at 50% 40%, rgba(15,24,40,0.62) 0%, rgba(15,24,40,0.34) 55%, transparent 82%),
-      linear-gradient(180deg, rgba(15,24,40,0.74) 0%, rgba(26,39,68,0.62) 48%, rgba(26,39,68,0.85) 88%, rgba(26,39,68,1) 100%),
-      url('images/hero.jpg');
+  .hero-bg { background-image: linear-gradient(180deg, #0F1828 0%, #1A2744 100%); background-attachment: scroll; }
+  #hero-clip { display: block; position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+  #hero-zoom {
+    position: absolute; inset: 0;
+    background: url('images/hero-mobile.jpg') no-repeat center center / contain;
+    transform-origin: center 50%;
+    will-change: transform;
   }
+  #hero-zoom-scrim {
+    display: block; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(180deg, rgba(15,24,40,0.20) 0%, rgba(26,39,68,0.05) 32%, rgba(26,39,68,0.34) 56%, rgba(26,39,68,0.30) 76%, rgba(26,39,68,0.42) 100%);
+  }
+  /* darker countdown boxes on mobile so the gold numbers pop over the snow */
+  .countdown-box { background: linear-gradient(145deg, rgba(15,24,40,0.55), rgba(26,39,68,0.42)); border-color: rgba(212,168,75,0.55); }
 }
 /* Hero text legibility over the photo */
 #hero h1 .gold-text, #hero h1 .ice-text { filter: drop-shadow(0 2px 12px rgba(15,24,40,0.8)); }
 #hero p { text-shadow: 0 1px 10px rgba(15,24,40,0.7); }
+/* Mobile: start hero content below the fixed header (avoid title being clipped) */
+@media (max-width: 768px) { #hero { align-items: flex-start; } #countdown-wrap { margin-top: 7rem; } }
 
 /* Flip card */
 .flip-card { perspective: 1200px; cursor: pointer; height: 320px; }
@@ -165,6 +177,10 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
   transform-style: preserve-3d;
 }
 .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+/* Only the face currently showing receives taps — fixes mobile double-tap / stuck flips */
+.flip-card-back { pointer-events: none; }
+.flip-card.flipped .flip-card-back { pointer-events: auto; }
+.flip-card.flipped .flip-card-front { pointer-events: none; }
 /* Hint flip on first card to teach tap on touch devices */
 @media (hover: none) {
   .flip-card.hint .flip-card-inner { animation: flipHint 2.6s ease-in-out 1.2s 2; }
@@ -191,9 +207,11 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
   box-shadow: 0 10px 40px rgba(212,168,75,0.4);
 }
 .silhouette { filter: blur(18px) saturate(1.2); opacity: 0.85; transform: scale(1.05); }
-.flip-card:not(.flipped):hover .flip-card-front {
-  border-color: rgba(212,168,75,0.7);
-  box-shadow: 0 10px 40px rgba(212,168,75,0.3), inset 0 0 60px rgba(126,200,227,0.2);
+@media (hover: hover) {
+  .flip-card:not(.flipped):hover .flip-card-front {
+    border-color: rgba(212,168,75,0.7);
+    box-shadow: 0 10px 40px rgba(212,168,75,0.3), inset 0 0 60px rgba(126,200,227,0.2);
+  }
 }
 
 /* Reveal */
@@ -593,6 +611,8 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
 
 <!-- HERO -->
 <section id="hero" class="hero-bg min-h-screen flex items-center justify-center relative pt-24 pb-12 px-4">
+  <div id="hero-clip" aria-hidden="true"><div id="hero-zoom"></div></div>
+  <div id="hero-zoom-scrim" aria-hidden="true"></div>
   <div class="aurora"></div>
   <div class="hero-glow top-20 right-10"></div>
   <div class="hero-glow bottom-20 left-10" style="animation-delay: 2s;"></div>
@@ -617,7 +637,7 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
     </p>
 
     <!-- Countdown -->
-    <div class="mb-8">
+    <div class="mb-8" id="countdown-wrap">
       <div class="text-ice-light text-sm mb-3 font-bold">⏳ الوقت المتبقي للعرض</div>
       <div id="countdown" class="flex justify-center gap-2 sm:gap-3 flex-wrap">
         <div class="countdown-box"><div class="countdown-num" id="cd-days">--</div><div class="countdown-label">يوم</div></div>
@@ -1298,6 +1318,27 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
   }
 })();
 
+// Mobile hero scroll-zoom — full cast shown small at top, zooms in as you scroll
+(function(){
+  const zoom = document.getElementById('hero-zoom');
+  const hero = document.getElementById('hero');
+  if (!zoom || !hero) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let ticking = false;
+  function update(){
+    ticking = false;
+    if (!window.matchMedia('(max-width: 768px)').matches || reduce.matches) {
+      zoom.style.transform = ''; return;
+    }
+    const h = hero.offsetHeight || window.innerHeight;
+    const p = Math.min(1, Math.max(0, window.scrollY / h));
+    zoom.style.transform = 'scale(' + (1 + p * 0).toFixed(3) + ')';
+  }
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
+})();
+
 // Countdown to 24.06.2026 18:00 (Asia/Jerusalem)
 function updateCountdown() {
   const target = new Date('2026-06-24T18:00:00+03:00').getTime();
@@ -1323,6 +1364,7 @@ setInterval(updateCountdown, 1000);
 const flipped = new Set();
 document.querySelectorAll('.flip-card').forEach(card => {
   card.addEventListener('click', () => {
+    card.classList.remove('hint');
     card.classList.toggle('flipped');
     const id = card.dataset.char;
     if (card.classList.contains('flipped')) flipped.add(id);
