@@ -10,24 +10,58 @@
 <meta property="og:description" content="رحلة كائنان ثلجيان نحو الشمس. الأربعاء 24.06.2026 — القصر الثقافي، الناصرة">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_AR">
-<!-- ⚠️ بعد ما ترفع الموقع: بدّل "https://your-domain.com" بالرابط الحقيقي (مكانين بـ og و مكان بـ twitter) عشان صورة المشاركة تظهر بواتساب/فيسبوك -->
-<meta property="og:url" content="https://your-domain.com/">
-<meta property="og:image" content="https://your-domain.com/images/poster.jpg">
+<!-- روابط المشاركة (og/twitter) — الدومين: elkhaialtheater.com -->
+<meta property="og:url" content="https://elkhaialtheater.com/">
+<meta property="og:image" content="https://elkhaialtheater.com/images/poster.jpg">
 <meta property="og:image:width" content="1000">
 <meta property="og:image:height" content="667">
 <meta property="og:image:alt" content="بوستر مسرحية من يوقظ الشّمس؟ — مسرح الخيال، الناصرة">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="من يوقظ الشّمس؟ — مسرحية أطفال سحرية">
 <meta name="twitter:description" content="رحلة كائنان ثلجيان نحو الشمس. الأربعاء 24.06.2026 — القصر الثقافي، الناصرة">
-<meta name="twitter:image" content="https://your-domain.com/images/poster.jpg">
+<meta name="twitter:image" content="https://elkhaialtheater.com/images/poster.jpg">
 
-<link rel="preload" as="image" href="images/hero.jpg" media="(min-width: 769px)" fetchpriority="high">
-<link rel="preload" as="image" href="images/hero-mobile.jpg" media="(max-width: 768px)" fetchpriority="high">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TheaterEvent",
+  "name": "من يوقظ الشّمس؟ — مسرحية أطفال",
+  "description": "مسرحية أطفال سحرية للعائلة من إنتاج مسرح الخيال — رحلة كائنين ثلجيين نحو الشمس. حكاية بصرية عن المحبّة والمشاركة والعطاء، لجيل 3-10 سنوات.",
+  "startDate": "2026-06-24T18:00:00+03:00",
+  "endDate": "2026-06-24T19:00:00+03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "inLanguage": "ar",
+  "typicalAgeRange": "3-10",
+  "image": ["https://elkhaialtheater.com/images/poster.jpg"],
+  "location": {
+    "@type": "Place",
+    "name": "القصر الثقافي — الناصرة",
+    "address": { "@type": "PostalAddress", "addressLocality": "الناصرة", "addressCountry": "IL" }
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "40",
+    "priceCurrency": "ILS",
+    "url": "https://www.eventati.org/event-details/msrhyt-mn-ywqz-alshms-2",
+    "availability": "https://schema.org/InStock"
+  },
+  "performer": { "@type": "TheaterGroup", "name": "مسرح الخيال — الناصرة" },
+  "organizer": { "@type": "Organization", "name": "مسرح الخيال — الناصرة", "url": "https://elkhaialtheater.com" },
+  "url": "https://elkhaialtheater.com"
+}
+</script>
+
+<link rel="preload" as="image" href="images/hero.webp" media="(min-width: 769px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-mobile.webp" media="(max-width: 768px)" fetchpriority="high">
 <link rel="stylesheet" href="tailwind.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://i.ytimg.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="preconnect" href="https://www.youtube.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -50,7 +84,7 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
 }
 #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 .loader-logo { width: 120px; height: 120px; animation: loaderSpin 2s ease-in-out infinite; }
-.brand-logo { background-image: url('images/logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center; }
+.brand-logo { background-image: url('images/logo.webp'); background-size: contain; background-repeat: no-repeat; background-position: center; }
 @keyframes loaderSpin { 0%,100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.1) rotate(5deg); } }
 
 /* Snow particles */
@@ -142,7 +176,7 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
   background-image:
     radial-gradient(ellipse 78% 55% at 50% 42%, rgba(15,24,40,0.58) 0%, rgba(15,24,40,0.30) 55%, transparent 80%),
     linear-gradient(180deg, rgba(15,24,40,0.70) 0%, rgba(26,39,68,0.46) 48%, rgba(26,39,68,0.82) 88%, rgba(26,39,68,1) 100%),
-    url('images/hero.jpg');
+    url('images/hero.webp');
   background-size: cover; background-position: center; background-attachment: fixed;
 }
 /* Mobile scroll-zoom hero: full cast shown small at top, zooms in as you scroll */
@@ -152,7 +186,7 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
   #hero-clip { display: block; position: absolute; inset: 0; z-index: 0; overflow: hidden; }
   #hero-zoom {
     position: absolute; inset: 0;
-    background: url('images/hero-mobile.jpg') no-repeat center center / contain;
+    background: url('images/hero-mobile.webp') no-repeat center center / contain;
     transform-origin: center 50%;
     will-change: transform;
   }
@@ -168,6 +202,51 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
 #hero p { text-shadow: 0 1px 10px rgba(15,24,40,0.7); }
 /* Mobile: start hero content below the fixed header (avoid title being clipped) */
 @media (max-width: 768px) { #hero { align-items: flex-start; } #countdown-wrap { margin-top: 7rem; } }
+
+/* Promo video mini-player (YouTube-style shrink on scroll) */
+#promo-box.mini {
+  position: fixed; left: 14px; bottom: 18px; z-index: 95;
+  width: min(48vw, 300px); height: auto; aspect-ratio: 16/9;
+  border-radius: 0.9rem;
+  border: 2px solid rgba(212,168,75,0.6);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.55);
+  animation: miniIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes miniIn {
+  from { transform: translateY(24px) scale(0.8); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+#promo-close {
+  display: none; position: absolute; top: 6px; left: 6px; z-index: 2;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #e63946; color: #fff; border: 2px solid rgba(255,255,255,0.6);
+  font-size: 13px; line-height: 1; cursor: pointer;
+  align-items: center; justify-content: center;
+}
+#promo-box.mini #promo-close { display: flex; }
+#promo-expand {
+  display: none; position: absolute; top: 6px; left: 40px; z-index: 2;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(15,24,40,0.85); color: #F5D78E; border: 2px solid rgba(245,215,142,0.6);
+  cursor: pointer; align-items: center; justify-content: center;
+}
+#promo-box.mini #promo-expand { display: flex; }
+/* Click-to-play facade (lazy iframe) */
+#promo-facade {
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  background: #0F1828 url('images/video-thumb.webp') center/cover no-repeat;
+}
+#promo-facade::after { content: ''; position: absolute; inset: 0; background: rgba(15,24,40,0.28); transition: background 0.3s; }
+#promo-facade:hover::after { background: rgba(15,24,40,0.12); }
+#promo-play {
+  position: relative; z-index: 1; padding-left: 4px;
+  width: 74px; height: 74px; border-radius: 50%;
+  background: rgba(230,57,70,0.92); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45); border: 3px solid rgba(255,255,255,0.85);
+  transition: transform 0.25s, background 0.25s;
+}
+#promo-facade:hover #promo-play { transform: scale(1.1); background: #e63946; }
 
 /* Flip card */
 .flip-card { perspective: 1200px; cursor: pointer; height: 320px; }
@@ -504,6 +583,14 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
   border: 2px solid rgba(212,168,75,0.5); object-fit: cover;
   background: #1A2744; flex-shrink: 0;
 }
+.review-initial {
+  width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+  border: 2px solid rgba(212,168,75,0.5);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cairo', sans-serif; font-weight: 900; font-size: 1.6rem;
+  background: linear-gradient(135deg, #D4A84B, #F5D78E); color: #1A2744;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+}
 .review-stars { display: inline-flex; gap: 2px; }
 .review-stars svg { width: 18px; height: 18px; }
 
@@ -618,6 +705,20 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
   <div class="hero-glow bottom-20 left-10" style="animation-delay: 2s;"></div>
 
   <div class="container mx-auto max-w-5xl text-center relative z-10">
+
+    <!-- Promo video — autoplays muted, shrinks to a floating mini-player on scroll -->
+    <div id="promo-wrap" class="mb-8 mx-auto w-full max-w-2xl">
+      <div id="promo-box" class="rounded-2xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-navy-dark relative" style="aspect-ratio: 16/9;">
+        <button id="promo-close" aria-label="إغلاق الفيديو">✕</button>
+        <button id="promo-expand" aria-label="تكبير الفيديو">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="promo-facade" class="absolute inset-0 w-full h-full" role="button" tabindex="0" aria-label="تشغيل العرض الترويجي">
+          <span id="promo-play"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+      </div>
+    </div>
+
     <div class="mb-6 flex justify-center gap-2 text-3xl sm:text-4xl">
       <span>❄️</span><span>✨</span><span>❄️</span>
     </div>
@@ -728,12 +829,12 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
       <div class="flip-card reveal" data-char="boy">
         <div class="flip-card-inner">
           <div class="flip-card-face flip-card-front p-6">
-            <img src="images/snow_boy.jpg" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <img src="images/snow_boy.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
             <div class="text-4xl mb-2">❄️</div>
             <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
           </div>
           <div class="flip-card-face flip-card-back p-6">
-            <img src="images/snow_boy.jpg" alt="الصبي الثلجي" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <img src="images/snow_boy.webp" alt="الصبي الثلجي" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
             <h3 class="font-cairo font-black text-2xl text-navy">الصبي الثلجي</h3>
           </div>
         </div>
@@ -743,12 +844,12 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
       <div class="flip-card reveal" data-char="girl">
         <div class="flip-card-inner">
           <div class="flip-card-face flip-card-front p-6">
-            <img src="images/snow_girl.jpg" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <img src="images/snow_girl.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
             <div class="text-4xl mb-2">❄️</div>
             <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
           </div>
           <div class="flip-card-face flip-card-back p-6">
-            <img src="images/snow_girl.jpg" alt="البنت الثلجية" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <img src="images/snow_girl.webp" alt="البنت الثلجية" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
             <h3 class="font-cairo font-black text-2xl text-navy">البنت الثلجية</h3>
           </div>
         </div>
@@ -758,12 +859,12 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
       <div class="flip-card reveal" data-char="squirrel">
         <div class="flip-card-inner">
           <div class="flip-card-face flip-card-front p-6">
-            <img src="images/squirrel.jpg" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <img src="images/squirrel.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
             <div class="text-4xl mb-2">❄️</div>
             <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
           </div>
           <div class="flip-card-face flip-card-back p-6">
-            <img src="images/squirrel.jpg" alt="السنجاب" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <img src="images/squirrel.webp" alt="السنجاب" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
             <h3 class="font-cairo font-black text-2xl text-navy">السنجاب</h3>
           </div>
         </div>
@@ -773,12 +874,12 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
       <div class="flip-card reveal" data-char="hedgehog">
         <div class="flip-card-inner">
           <div class="flip-card-face flip-card-front p-6">
-            <img src="images/hedgehog.jpg" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <img src="images/hedgehog.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
             <div class="text-4xl mb-2">❄️</div>
             <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
           </div>
           <div class="flip-card-face flip-card-back p-6">
-            <img src="images/hedgehog.jpg" alt="القنفذ" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <img src="images/hedgehog.webp" alt="القنفذ" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
             <h3 class="font-cairo font-black text-2xl text-navy">القنفذ</h3>
           </div>
         </div>
@@ -788,12 +889,12 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
       <div class="flip-card reveal" data-char="rabbit">
         <div class="flip-card-inner">
           <div class="flip-card-face flip-card-front p-6">
-            <img src="images/rabbit.jpg" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <img src="images/rabbit.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
             <div class="text-4xl mb-2">❄️</div>
             <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
           </div>
           <div class="flip-card-face flip-card-back p-6">
-            <img src="images/rabbit.jpg" alt="الأرنب" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <img src="images/rabbit.webp" alt="الأرنب" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
             <h3 class="font-cairo font-black text-2xl text-navy">الأرنب</h3>
           </div>
         </div>
@@ -803,12 +904,12 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
       <div class="flip-card reveal" data-char="crow">
         <div class="flip-card-inner">
           <div class="flip-card-face flip-card-front p-6">
-            <img src="images/crow.jpg" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <img src="images/crow.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
             <div class="text-4xl mb-2">❄️</div>
             <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
           </div>
           <div class="flip-card-face flip-card-back p-6">
-            <img src="images/crow.jpg" alt="الغراب" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <img src="images/crow.webp" alt="الغراب" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
             <h3 class="font-cairo font-black text-2xl text-navy">الغراب</h3>
           </div>
         </div>
@@ -908,7 +1009,7 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
           "صراحةً من أحلى العروض اللي حضرناها! الأولاد ما رمشولهم عيون من أول دقيقة لآخر وحدة. الموسيقى والألوان والقصة كلشي مدروس. رح نحضر كل عروضكم الجاية أكيد 💛"
         </p>
         <div class="flex items-center gap-3 mt-5 pt-5 border-t border-white/10">
-          <img class="review-avatar" loading="lazy" alt="صورة دعاء عرابية" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Doaa&backgroundColor=ffd5dc&radius=50">
+          <div class="review-initial" role="img" aria-label="دعاء عرابية">د</div>
           <div>
             <p class="font-cairo font-bold text-gold-light">دعاء عرابية</p>
             <p class="text-white/50 text-sm">معلّمة وأم — الناصرة</p>
@@ -929,7 +1030,7 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
           "تجربة مختلفة عن أيّ عرض حضرناه قبل! العالم الثلجي على المسرح كان مبهر بالديكور والإضاءة، والقصة لمست قلبي قبل الأولاد. طلعنا كلّنا مبسوطين ومتأثّرين — شغل بيشهدله مسرح الخيال 👏"
         </p>
         <div class="flex items-center gap-3 mt-5 pt-5 border-t border-white/10">
-          <img class="review-avatar" loading="lazy" alt="صورة كليمانس عوّاد" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Clemence&backgroundColor=c0e8f5&radius=50">
+          <div class="review-initial" role="img" aria-label="كليمانس عوّاد" style="background:linear-gradient(135deg,#7EC8E3,#C8E8F5);">ك</div>
           <div>
             <p class="font-cairo font-bold text-gold-light">كليمانس عوّاد</p>
             <p class="text-white/50 text-sm">معلّمة — الناصرة</p>
@@ -950,7 +1051,7 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
           "كمعلّمة، بقيّم العرض من ناحية تربوية ٥ من ٥. لغة عربية سليمة وجميلة، قيم حقيقية، وتفاعل رائع مع الأطفال. حجزنا كصفّ كامل والتجربة كانت لا تُنسى!"
         </p>
         <div class="flex items-center gap-3 mt-5 pt-5 border-t border-white/10">
-          <img class="review-avatar" loading="lazy" alt="صورة رنا خطيب" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rana&backgroundColor=ffe7a8&radius=50">
+          <div class="review-initial" role="img" aria-label="رنا خطيب">ر</div>
           <div>
             <p class="font-cairo font-bold text-gold-light">رنا خطيب</p>
             <p class="text-white/50 text-sm">معلّمة وأمّ — كفر كنا</p>
@@ -970,33 +1071,20 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
       <p class="text-ice-light text-lg">لمحات من العالم السحري الذي ينتظركم</p>
     </div>
 
-    <!-- YouTube embed -->
-    <div id="trailer" class="reveal mb-10 rounded-3xl overflow-hidden border-2 border-gold/30 shadow-2xl bg-navy-dark relative" style="aspect-ratio: 16/9;">
-      <iframe
-        class="absolute inset-0 w-full h-full"
-        src="https://www.youtube.com/embed/aT99Q1iufB4?rel=0"
-        title="العرض الترويجي لمسرحية من يوقظ الشمس"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
-
     <!-- Photo gallery -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
-      <div class="gallery-item reveal"><img src="images/poster.jpg" alt="بوستر المسرحية" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/group.jpg" alt="من العرض" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/stage_a.jpg" alt="الشخصيات الثلجية على المسرح" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/stage_b.jpg" alt="الشخصيات الثلجية على المسرح" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/show1.jpg" alt="من العرض" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/show2.jpg" alt="من العرض" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/stage_c.jpg" alt="السنجاب على المسرح" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/stage_d.jpg" alt="القنفذ على المسرح" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/show3.jpg" alt="من العرض" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/show4.jpg" alt="من العرض" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/stage_e.jpg" alt="الأرنب على المسرح" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="images/stage_f.jpg" alt="الغراب على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/poster.webp" alt="بوستر المسرحية" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/group.webp" alt="من العرض" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_a.webp" alt="الشخصيات الثلجية على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_b.webp" alt="الشخصيات الثلجية على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/show1.webp" alt="من العرض" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/show2.webp" alt="من العرض" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_c.webp" alt="السنجاب على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_d.webp" alt="القنفذ على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/show3.webp" alt="من العرض" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/show4.webp" alt="من العرض" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_e.webp" alt="الأرنب على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_f.webp" alt="الغراب على المسرح" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -1075,7 +1163,7 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
       </div>
       <div class="reveal faq-item">
         <button class="faq-question"><span>وين بالضبط القصر الثقافي بالناصرة؟</span><span class="faq-arrow">▼</span></button>
-        <div class="faq-answer"><p>القصر الثقافي في الناصرة هو القاعة المعروفة. للوصول، استخدموا خرائط جوجل بالبحث عن "القصر الثقافي - الناصرة" أو تواصلوا معنا للإرشادات.</p></div>
+        <div class="faq-answer"><p>القصر الثقافي في الناصرة هو القاعة المعروفة. اضغطوا للوصول مباشرة: <a href="https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%84%D9%82%D8%B5%D8%B1%20%D8%A7%D9%84%D8%AB%D9%82%D8%A7%D9%81%D9%8A%20%D8%A7%D9%84%D9%86%D8%A7%D8%B5%D8%B1%D8%A9" target="_blank" rel="noopener" class="text-gold-light underline font-bold">📍 القصر الثقافي على خرائط جوجل</a> — أو تواصلوا معنا للإرشادات.</p></div>
       </div>
       <div class="reveal faq-item">
         <button class="faq-question"><span>إذا كان عندي استفسار أو طلب خاص؟</span><span class="faq-arrow">▼</span></button>
@@ -1337,6 +1425,96 @@ h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
   window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
   window.addEventListener('resize', update, { passive: true });
   update();
+})();
+
+// Promo video — click-to-play facade (fast load, sound on user gesture) + floating mini-player on scroll
+(function(){
+  const wrap = document.getElementById('promo-wrap');
+  const box = document.getElementById('promo-box');
+  const facade = document.getElementById('promo-facade');
+  const closeBtn = document.getElementById('promo-close');
+  const expandBtn = document.getElementById('promo-expand');
+  if (!wrap || !box || !facade) return;
+  const VIDEO_ID = 'aT99Q1iufB4';
+  let player = null, dismissed = false, started = false, io = null;
+
+  function startVideo(){
+    if (started) return;
+    started = true;
+    const iframe = document.createElement('iframe');
+    iframe.id = 'promo-iframe';
+    iframe.className = 'absolute inset-0 w-full h-full';
+    // autoplay here is allowed (user gesture) → sound plays
+    iframe.src = 'https://www.youtube.com/embed/' + VIDEO_ID + '?autoplay=1&playsinline=1&rel=0&enablejsapi=1';
+    iframe.title = 'العرض الترويجي لمسرحية من يوقظ الشمس';
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    iframe.setAttribute('allowfullscreen', '');
+    box.appendChild(iframe);
+    facade.remove();
+    loadApiThen(createPlayer);
+    setupObserver();
+  }
+
+  function loadApiThen(cb){
+    if (window.YT && window.YT.Player) { cb(); return; }
+    const prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function(){ if (typeof prev === 'function') prev(); cb(); };
+    if (!document.getElementById('yt-api')) {
+      const tag = document.createElement('script');
+      tag.id = 'yt-api'; tag.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(tag);
+    }
+  }
+
+  function createPlayer(){
+    player = new YT.Player('promo-iframe', {
+      events: {
+        onStateChange: function(e){
+          if (e.data === 0 && box.classList.contains('mini')) { dismissed = true; setMini(false); } // ended while mini
+        }
+      }
+    });
+  }
+
+  function isPlaying(){
+    try { return player && player.getPlayerState() === 1; }
+    catch(err) { return true; }
+  }
+
+  function setMini(on){
+    if (on) {
+      if (box.classList.contains('mini')) return;
+      wrap.style.height = box.offsetHeight + 'px';
+      box.classList.add('mini');
+    } else {
+      box.classList.remove('mini');
+      wrap.style.height = '';
+    }
+  }
+
+  function setupObserver(){
+    if (io) return;
+    io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { dismissed = false; setMini(false); }
+        else if (!dismissed && isPlaying()) { setMini(true); }
+      });
+    }, { threshold: 0 });
+    io.observe(wrap);
+  }
+
+  facade.addEventListener('click', startVideo);
+  facade.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); startVideo(); } });
+  closeBtn.addEventListener('click', (ev) => {
+    ev.stopPropagation(); dismissed = true;
+    try { player && player.pauseVideo(); } catch(err) {}
+    setMini(false);
+  });
+  expandBtn.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
 })();
 
 // Countdown to 24.06.2026 18:00 (Asia/Jerusalem)
