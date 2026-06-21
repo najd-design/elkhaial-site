@@ -1,0 +1,9 @@
+# إعدادات Netlify — موقع «من يوقظ الشّمس؟»
+# الموقع ساكن (publish = ".") + وظائف خادم صغيرة لنظام الأكواد.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# لا يوجد أمر بناء (build command) — الموقع HTML ساكن.
+# وجود package.json بيخلّي Netlify يثبّت @netlify/blobs تلقائيًّا للوظائف.

@@ -1,0 +1,9 @@
+{
+  "name": "elkhaial-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "موقع مسرحية من يوقظ الشّمس؟ — مع نظام مشاهدة خاصّة بكود",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

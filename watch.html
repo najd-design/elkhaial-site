@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مشاهدة خاصّة | من يوقظ الشّمس؟ — مسرح الخيال</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: linear-gradient(180deg, #0F1828 0%, #1A2744 30%, #1A2744 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  h1, h2, h3 { font-family: 'Cairo', sans-serif; }
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 22px;
+    padding: 34px 26px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+  }
+  .logo { width: 84px; height: 84px; object-fit: contain; margin: 0 auto 14px; display: block; }
+  h1 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+  .sub { font-size: 14px; color: #aebbd4; margin-bottom: 26px; line-height: 1.6; }
+
+  .field { position: relative; margin-bottom: 14px; }
+  input[type="text"] {
+    width: 100%;
+    padding: 16px 18px;
+    font-family: 'Cairo', monospace;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 14px;
+    border: 2px solid rgba(255,255,255,0.12);
+    background: rgba(0,0,0,0.25);
+    color: #fff;
+    outline: none;
+    transition: border-color .2s;
+  }
+  input[type="text"]:focus { border-color: #F5B301; }
+  input::placeholder { color: #5d6b86; letter-spacing: 2px; font-size: 16px; }
+
+  .btn {
+    width: 100%;
+    padding: 16px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #F5B301, #F59001);
+    color: #1A2744;
+    cursor: pointer;
+    transition: transform .15s, opacity .2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:disabled { opacity: .6; cursor: default; transform: none; }
+
+  .msg { margin-top: 16px; font-size: 14px; line-height: 1.6; min-height: 20px; }
+  .msg.err { color: #ff8a8a; }
+  .msg.ok { color: #8affb0; }
+
+  .divider { margin: 26px 0 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .req-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #dfe6f2; }
+  .req-sub { font-size: 12.5px; color: #8b99b5; margin-bottom: 14px; line-height: 1.6; }
+  .req-form input, .req-form textarea {
+    width: 100%; padding: 12px 14px; margin-bottom: 10px;
+    border-radius: 11px; border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(0,0,0,0.2); color: #fff; font-family: 'Tajawal'; font-size: 14px; outline: none;
+  }
+  .req-form textarea { resize: vertical; min-height: 64px; }
+  .btn-ghost {
+    background: transparent; border: 2px solid #F5B301; color: #F5B301;
+  }
+  .btn-ghost:hover { background: rgba(245,179,1,.1); }
+
+  /* مشغّل الفيديو */
+  #playerWrap { display: none; margin-top: 22px; }
+  .ratio { position: relative; width: 100%; padding-top: 56.25%; border-radius: 16px; overflow: hidden; background:#000; }
+  .ratio iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .countdown { margin-top: 12px; font-size: 12.5px; color: #8b99b5; }
+
+  .back { display: inline-block; margin-top: 22px; color: #8b99b5; font-size: 13px; text-decoration: none; }
+  .back:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img class="logo" src="images/logo.png" alt="مسرح الخيال">
+
+  <!-- بوّابة الكود -->
+  <div id="gate">
+    <h1>مشاهدة خاصّة 🎭</h1>
+    <p class="sub">هاي الصفحة لمشاهدة المسرحيّة كاملة — مخصّصة لأشخاص مصرّح لهم.<br>أدخل الكود اللي وصلك.</p>
+
+    <form id="codeForm">
+      <div class="field">
+        <input type="text" id="codeInput" placeholder="مثال: K7P2-9XQM" maxlength="9" autocomplete="off" inputmode="latin">
+      </div>
+      <button class="btn" type="submit" id="codeBtn">شاهد المسرحيّة</button>
+    </form>
+    <div class="msg" id="msg"></div>
+
+    <div class="divider"></div>
+
+    <!-- طلب صلاحيّة -->
+    <div id="reqBlock">
+      <div class="req-title">ما عندك كود؟</div>
+      <p class="req-sub">اطلب صلاحيّة مشاهدة وراح نتواصل معك ونبعتلك كود.</p>
+      <form class="req-form" name="screening-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="reqForm">
+        <input type="hidden" name="form-name" value="screening-request">
+        <p style="display:none"><label>لا تعبّي هذا: <input name="bot-field"></label></p>
+        <input type="text" name="name" placeholder="الاسم الكامل" required>
+        <input type="text" name="contact" placeholder="رقم واتساب أو إيميل" required>
+        <textarea name="reason" placeholder="مين إنت / ليش بدك تشاهد؟ (مثلاً: ممثّل، مدير مدرسة...)" required></textarea>
+        <button class="btn btn-ghost" type="submit">اطلب صلاحيّة مشاهدة</button>
+      </form>
+      <div class="msg" id="reqMsg"></div>
+    </div>
+  </div>
+
+  <!-- المشغّل (يظهر بعد الكود الصحيح) -->
+  <div id="playerWrap">
+    <h1 style="font-size:19px;margin-bottom:14px;">من يوقظ الشّمس؟ 🌞</h1>
+    <div class="ratio"><iframe id="player" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+  <a class="back" href="/">← رجوع للصفحة الرئيسيّة</a>
+</div>
+
+<script>
+  const form = document.getElementById('codeForm');
+  const input = document.getElementById('codeInput');
+  const btn = document.getElementById('codeBtn');
+  const msg = document.getElementById('msg');
+  const gate = document.getElementById('gate');
+  const playerWrap = document.getElementById('playerWrap');
+  const player = document.getElementById('player');
+  const countdown = document.getElementById('countdown');
+
+  const REASONS = {
+    invalid: 'الكود غير صحيح. تأكّد منه وحاول مرّة تانية.',
+    expired: 'انتهت صلاحيّة هذا الكود (مرّت 48 ساعة على أوّل استخدام).',
+    maxed: 'خلص عدد مرّات المشاهدة المسموحة لهذا الكود (5 مرّات).',
+    empty: 'اكتب الكود أوّلاً.',
+    server_config: 'في خلل بالإعدادات — تواصل مع الإدارة.',
+    default: 'صار خطأ. حاول مرّة تانية بعد لحظات.'
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const code = input.value.trim().toUpperCase();
+    if (!code) { showMsg(REASONS.empty, 'err'); return; }
+
+    btn.disabled = true; btn.textContent = 'جاري التحقّق...'; showMsg('', '');
+    try {
+      const res = await fetch('/.netlify/functions/verify-code', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ code })
+      });
+      const data = await res.json();
+
+      if (data.ok) {
+        player.src = data.url;
+        gate.style.display = 'none';
+        playerWrap.style.display = 'block';
+        startCountdown(data.remainingMs, data.remainingUses);
+      } else {
+        showMsg(REASONS[data.reason] || REASONS.default, 'err');
+      }
+    } catch {
+      showMsg(REASONS.default, 'err');
+    } finally {
+      btn.disabled = false; btn.textContent = 'شاهد المسرحيّة';
+    }
+  });
+
+  function showMsg(text, type) {
+    msg.textContent = text;
+    msg.className = 'msg' + (type ? ' ' + type : '');
+  }
+
+  function startCountdown(ms, remainingUses) {
+    const usesTxt = (typeof remainingUses === 'number')
+      ? ` · باقي ${remainingUses} ${remainingUses === 1 ? 'فتحة' : 'فتحات'} للمشاهدة`
+      : '';
+    if (!ms || ms < 0) { countdown.textContent = usesTxt.replace(/^ · /, ''); return; }
+    function tick() {
+      const h = Math.floor(ms / 3600000);
+      const m = Math.floor((ms % 3600000) / 60000);
+      countdown.textContent = `متبقّي على انتهاء الصلاحيّة: ${h} ساعة و${m} دقيقة${usesTxt}`;
+      ms -= 60000;
+      if (ms < 0) countdown.textContent = 'انتهت صلاحيّة المشاهدة.';
+    }
+    tick();
+    setInterval(tick, 60000);
+  }
+
+  // إرسال طلب الصلاحيّة بدون مغادرة الصفحة (Netlify Forms)
+  const reqForm = document.getElementById('reqForm');
+  const reqMsg = document.getElementById('reqMsg');
+  reqForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fd = new FormData(reqForm);
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(fd).toString()
+      });
+      reqForm.style.display = 'none';
+      reqMsg.textContent = '✅ وصلنا طلبك! راح نتواصل معك قريبًا ونبعتلك الكود.';
+      reqMsg.className = 'msg ok';
+    } catch {
+      reqMsg.textContent = 'صار خطأ بإرسال الطلب. حاول مرّة تانية.';
+      reqMsg.className = 'msg err';
+    }
+  });
+</script>
+</body>
+</html>
