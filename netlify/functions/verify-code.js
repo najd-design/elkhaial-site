@@ -52,9 +52,10 @@ export default async (req) => {
 // توقيع رابط مشغّل Bunny Stream — Token Authentication
 // الصيغة الرسميّة: token = SHA256(tokenKey + videoId + expires) — تحقّق منها بلوحة Bunny
 function signBunnyEmbed() {
-  const libraryId = process.env.BUNNY_LIBRARY_ID
-  const videoId   = process.env.BUNNY_VIDEO_ID
-  const tokenKey  = process.env.BUNNY_TOKEN_KEY
+  // .trim() يتجاهل أي مسافات/أسطر زيادة انلصقت بالقيم عند إدخالها بـ Netlify
+  const libraryId = (process.env.BUNNY_LIBRARY_ID || '').trim()
+  const videoId   = (process.env.BUNNY_VIDEO_ID || '').trim()
+  const tokenKey  = (process.env.BUNNY_TOKEN_KEY || '').trim()
   if (!libraryId || !videoId || !tokenKey) return null
 
   const expires = Math.floor(Date.now() / 1000) + LINK_TTL_SEC
