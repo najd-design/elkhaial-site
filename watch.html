@@ -120,19 +120,11 @@
 
     <div class="divider"></div>
 
-    <!-- طلب صلاحيّة -->
+    <!-- طلب صلاحيّة عبر واتساب -->
     <div id="reqBlock">
       <div class="req-title">ما عندك كود؟</div>
-      <p class="req-sub">اطلب صلاحيّة مشاهدة وراح نتواصل معك ونبعتلك كود.</p>
-      <form class="req-form" name="screening-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="reqForm">
-        <input type="hidden" name="form-name" value="screening-request">
-        <p style="display:none"><label>لا تعبّي هذا: <input name="bot-field"></label></p>
-        <input type="text" name="name" placeholder="الاسم الكامل" required>
-        <input type="text" name="contact" placeholder="رقم واتساب أو إيميل" required>
-        <textarea name="reason" placeholder="مين إنت / ليش بدك تشاهد؟ (مثلاً: ممثّل، مدير مدرسة...)" required></textarea>
-        <button class="btn btn-ghost" type="submit">اطلب صلاحيّة مشاهدة</button>
-      </form>
-      <div class="msg" id="reqMsg"></div>
+      <p class="req-sub">اطلب صلاحيّة مشاهدة عبر واتساب وراح نبعتلك كود.</p>
+      <a href="#" id="waBtn" class="btn btn-ghost" style="display:inline-block;text-decoration:none;">📲 اطلب صلاحيّة عبر واتساب</a>
     </div>
   </div>
 
@@ -215,25 +207,17 @@
     setInterval(tick, 60000);
   }
 
-  // إرسال طلب الصلاحيّة بدون مغادرة الصفحة (Netlify Forms)
-  const reqForm = document.getElementById('reqForm');
-  const reqMsg = document.getElementById('reqMsg');
-  reqForm.addEventListener('submit', async (e) => {
+  // طلب الصلاحيّة عبر واتساب — يفتح محادثة برسالة جاهزة على رقم المسرح
+  const WHATSAPP_NUMBER = '972547667317'; // 054-766-7317 بصيغة دوليّة
+  const waBtn = document.getElementById('waBtn');
+  waBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const fd = new FormData(reqForm);
-    try {
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(fd).toString()
-      });
-      reqForm.style.display = 'none';
-      reqMsg.textContent = '✅ وصلنا طلبك! راح نتواصل معك قريبًا ونبعتلك الكود.';
-      reqMsg.className = 'msg ok';
-    } catch {
-      reqMsg.textContent = 'صار خطأ بإرسال الطلب. حاول مرّة تانية.';
-      reqMsg.className = 'msg err';
-    }
+    const text =
+      'مرحبا 🌞 بدّي أطلب صلاحيّة مشاهدة مسرحيّة «من يوقظ الشّمس؟» كاملة.\n\n' +
+      'الاسم: \n' +
+      'مين أنا (ممثّل / مدير مدرسة / ...): \n' +
+      'السبب: ';
+    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text), '_blank');
   });
 </script>
 </body>
