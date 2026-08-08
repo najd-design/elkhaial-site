@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من يوقظ الشّمس؟ | مسرح الخيال — الناصرة</title>
+<meta name="description" content="مسرحية أطفال سحرية للعائلة — من يوقظ الشّمس؟ من إنتاج مسرح الخيال، الناصرة. رحلة كائنين ثلجيين نحو الشمس، لجيل 3-10. بنجيب العرض لروضتكم أو مدرستكم.">
+<meta name="keywords" content="مسرحية أطفال, مسرح الخيال, الناصرة, من يوقظ الشمس, القصر الثقافي, مسرح عربي, عرض عائلي">
+<meta property="og:title" content="من يوقظ الشّمس؟ — مسرحية أطفال سحرية">
+<meta property="og:description" content="رحلة كائنان ثلجيان نحو الشمس. مسرحية أطفال من مسرح الخيال — الناصرة. بنجيبها لعندكم.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+<!-- روابط المشاركة (og/twitter) — الدومين: elkhaialtheater.com -->
+<meta property="og:url" content="https://elkhaialtheater.com/">
+<meta property="og:image" content="https://elkhaialtheater.com/images/poster.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="667">
+<meta property="og:image:alt" content="بوستر مسرحية من يوقظ الشّمس؟ — مسرح الخيال، الناصرة">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="من يوقظ الشّمس؟ — مسرحية أطفال سحرية">
+<meta name="twitter:description" content="رحلة كائنان ثلجيان نحو الشمس. مسرحية أطفال من مسرح الخيال — الناصرة. بنجيبها لعندكم.">
+<meta name="twitter:image" content="https://elkhaialtheater.com/images/poster.jpg">
+
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Play",
+  "name": "من يوقظ الشّمس؟",
+  "description": "مسرحية أطفال سحرية للعائلة من إنتاج مسرح الخيال — رحلة كائنين ثلجيين نحو الشمس. حكاية بصرية عن المحبّة والمشاركة والعطاء، لجيل 3-10 سنوات.",
+  "inLanguage": "ar",
+  "typicalAgeRange": "3-10",
+  "genre": "مسرح أطفال",
+  "image": ["https://elkhaialtheater.com/images/poster.jpg"],
+  "author": { "@type": "TheaterGroup", "name": "مسرح الخيال — الناصرة" },
+  "productionCompany": {
+    "@type": "TheaterGroup",
+    "name": "مسرح الخيال — الناصرة",
+    "url": "https://elkhaialtheater.com",
+    "telephone": "+972547667317",
+    "email": "elkhaialtheater@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "الناصرة", "addressCountry": "IL" }
+  },
+  "url": "https://elkhaialtheater.com"
+}
+</script>
+
+<link rel="preload" as="image" href="images/hero.webp" media="(min-width: 769px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-mobile.webp" media="(max-width: 768px)" fetchpriority="high">
+<link rel="stylesheet" href="tailwind.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+* { -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: linear-gradient(180deg, #0F1828 0%, #1A2744 30%, #1A2744 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; }
+
+/* Loading screen */
+#loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: linear-gradient(135deg, #0F1828 0%, #1A2744 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-logo { width: 120px; height: 120px; animation: loaderSpin 2s ease-in-out infinite; }
+.brand-logo { background-image: url('images/logo.webp'); background-size: contain; background-repeat: no-repeat; background-position: center; }
+@keyframes loaderSpin { 0%,100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.1) rotate(5deg); } }
+
+/* Snow particles */
+.snowflake {
+  position: fixed; top: -10px; color: #fff;
+  pointer-events: none; user-select: none; z-index: 1;
+  opacity: 0.7; animation: snowfall linear infinite;
+  text-shadow: 0 0 5px rgba(126, 200, 227, 0.5);
+}
+@keyframes snowfall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; } 90% { opacity: 0.8; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Aurora */
+.aurora {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(126,200,227,0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(212,168,75,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(200,232,245,0.15) 0%, transparent 60%);
+  animation: auroraDrift 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes auroraDrift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(2%, -1%, 0) scale(1.06); }
+}
+
+/* Glass */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Gold gradient text */
+.gold-text {
+  background: linear-gradient(135deg, #F5D78E 0%, #D4A84B 50%, #F5D78E 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  background-size: 200% auto; animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
+.ice-text {
+  background: linear-gradient(135deg, #C8E8F5 0%, #7EC8E3 50%, #C8E8F5 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* Ticket button */
+.btn-ticket {
+  background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+  color: #fff; font-weight: 800;
+  padding: 0.75rem 1.5rem; border-radius: 9999px;
+  box-shadow: 0 4px 20px rgba(230,57,70,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  position: relative; overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+.btn-ticket::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  transform: translateX(-100%); transition: transform 0.6s ease;
+}
+.btn-ticket:hover::before { transform: translateX(100%); }
+.btn-ticket:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(230,57,70,0.7), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.btn-ticket-big {
+  padding: 1.2rem 2.5rem; font-size: 1.25rem;
+  overflow: visible;
+  animation: pulseRing 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+.btn-ticket-big::before { display: none; }
+@keyframes pulseRing {
+  0%   { box-shadow: 0 4px 20px rgba(230,57,70,0.55), 0 0 0 0   rgba(230,57,70,0.55), inset 0 1px 0 rgba(255,255,255,0.3); }
+  80%  { box-shadow: 0 4px 20px rgba(230,57,70,0.55), 0 0 0 16px rgba(230,57,70,0),    inset 0 1px 0 rgba(255,255,255,0.3); }
+  100% { box-shadow: 0 4px 20px rgba(230,57,70,0.55), 0 0 0 16px rgba(230,57,70,0),    inset 0 1px 0 rgba(255,255,255,0.3); }
+}
+@keyframes pulseTicket {
+  0%,100% { transform: scale(1);    }
+  50%     { transform: scale(1.03); }
+}
+
+/* Hero bg — group photo */
+.hero-bg {
+  background-image:
+    radial-gradient(ellipse 78% 55% at 50% 42%, rgba(15,24,40,0.58) 0%, rgba(15,24,40,0.30) 55%, transparent 80%),
+    linear-gradient(180deg, rgba(15,24,40,0.70) 0%, rgba(26,39,68,0.46) 48%, rgba(26,39,68,0.82) 88%, rgba(26,39,68,1) 100%),
+    url('images/hero.webp');
+  background-size: cover; background-position: center; background-attachment: fixed;
+}
+/* Mobile scroll-zoom hero: full cast shown small at top, zooms in as you scroll */
+#hero-clip, #hero-zoom-scrim { display: none; }
+@media (max-width: 768px) {
+  .hero-bg { background-image: linear-gradient(180deg, #0F1828 0%, #1A2744 100%); background-attachment: scroll; }
+  #hero-clip { display: block; position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+  #hero-zoom {
+    position: absolute; inset: 0;
+    background: url('images/hero-mobile.webp') no-repeat center center / contain;
+    transform-origin: center 50%;
+    will-change: transform;
+  }
+  #hero-zoom-scrim {
+    display: block; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(180deg, rgba(15,24,40,0.20) 0%, rgba(26,39,68,0.05) 32%, rgba(26,39,68,0.34) 56%, rgba(26,39,68,0.30) 76%, rgba(26,39,68,0.42) 100%);
+  }
+  /* darker countdown boxes on mobile so the gold numbers pop over the snow */
+  .countdown-box { background: linear-gradient(145deg, rgba(15,24,40,0.55), rgba(26,39,68,0.42)); border-color: rgba(212,168,75,0.55); }
+}
+/* Hero text legibility over the photo */
+#hero h1 .gold-text, #hero h1 .ice-text { filter: drop-shadow(0 2px 12px rgba(15,24,40,0.8)); }
+#hero p { text-shadow: 0 1px 10px rgba(15,24,40,0.7); }
+/* Mobile: start hero content below the fixed header (avoid title being clipped) */
+@media (max-width: 768px) { #hero { align-items: flex-start; } #countdown-wrap { margin-top: 7rem; } }
+
+/* Promo video mini-player (YouTube-style shrink on scroll) */
+#promo-box.mini {
+  position: fixed; left: 14px; bottom: 18px; z-index: 95;
+  width: min(48vw, 300px); height: auto; aspect-ratio: 16/9;
+  border-radius: 0.9rem;
+  border: 2px solid rgba(212,168,75,0.6);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.55);
+  animation: miniIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes miniIn {
+  from { transform: translateY(24px) scale(0.8); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+#promo-close {
+  display: none; position: absolute; top: 6px; left: 6px; z-index: 2;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #e63946; color: #fff; border: 2px solid rgba(255,255,255,0.6);
+  font-size: 13px; line-height: 1; cursor: pointer;
+  align-items: center; justify-content: center;
+}
+#promo-box.mini #promo-close { display: flex; }
+#promo-expand {
+  display: none; position: absolute; top: 6px; left: 40px; z-index: 2;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(15,24,40,0.85); color: #F5D78E; border: 2px solid rgba(245,215,142,0.6);
+  cursor: pointer; align-items: center; justify-content: center;
+}
+#promo-box.mini #promo-expand { display: flex; }
+/* Click-to-play facade (lazy iframe) */
+#promo-facade {
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  background: #0F1828 url('images/video-thumb.webp') center/cover no-repeat;
+}
+#promo-facade::after { content: ''; position: absolute; inset: 0; background: rgba(15,24,40,0.28); transition: background 0.3s; }
+#promo-facade:hover::after { background: rgba(15,24,40,0.12); }
+#promo-play {
+  position: relative; z-index: 1; padding-left: 4px;
+  width: 74px; height: 74px; border-radius: 50%;
+  background: rgba(230,57,70,0.92); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45); border: 3px solid rgba(255,255,255,0.85);
+  transition: transform 0.25s, background 0.25s;
+}
+#promo-facade:hover #promo-play { transform: scale(1.1); background: #e63946; }
+
+/* Flip card */
+.flip-card { perspective: 1200px; cursor: pointer; height: 320px; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+/* Only the face currently showing receives taps — fixes mobile double-tap / stuck flips */
+.flip-card-back { pointer-events: none; }
+.flip-card.flipped .flip-card-back { pointer-events: auto; }
+.flip-card.flipped .flip-card-front { pointer-events: none; }
+/* Hint flip on first card to teach tap on touch devices */
+@media (hover: none) {
+  .flip-card.hint .flip-card-inner { animation: flipHint 2.6s ease-in-out 1.2s 2; }
+}
+@keyframes flipHint {
+  0%, 80%, 100% { transform: rotateY(0); }
+  40%, 50%      { transform: rotateY(-25deg); }
+}
+.flip-card-face {
+  position: absolute; inset: 0;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  border-radius: 1.25rem; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+.flip-card-front {
+  background: linear-gradient(145deg, #0F1828 0%, #1A2744 100%);
+  border: 2px solid rgba(212,168,75,0.3);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4), inset 0 0 60px rgba(126,200,227,0.1);
+}
+.flip-card-back {
+  background: linear-gradient(145deg, #C8E8F5 0%, #7EC8E3 100%);
+  transform: rotateY(180deg);
+  border: 3px solid #D4A84B;
+  box-shadow: 0 10px 40px rgba(212,168,75,0.4);
+}
+.silhouette { filter: blur(18px) saturate(1.2); opacity: 0.85; transform: scale(1.05); }
+@media (hover: hover) {
+  .flip-card:not(.flipped):hover .flip-card-front {
+    border-color: rgba(212,168,75,0.7);
+    box-shadow: 0 10px 40px rgba(212,168,75,0.3), inset 0 0 60px rgba(126,200,227,0.2);
+  }
+}
+
+/* Reveal */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Tag pills */
+.tag-pill {
+  background: linear-gradient(135deg, rgba(212,168,75,0.2), rgba(245,215,142,0.2));
+  border: 1px solid rgba(212,168,75,0.4); color: #F5D78E;
+  padding: 0.5rem 1.25rem; border-radius: 9999px;
+  font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem;
+}
+
+/* Gallery */
+.gallery-item {
+  overflow: hidden; border-radius: 1rem; cursor: pointer;
+  position: relative; aspect-ratio: 4/3; background: #0F1828;
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item::after {
+  content: '🔍'; position: absolute; inset: 0;
+  background: rgba(15,24,40,0.6);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; opacity: 0; transition: opacity 0.3s;
+  pointer-events: none;
+}
+.gallery-item:hover::after { opacity: 1; }
+
+/* Lightbox */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+  z-index: 100; display: none; align-items: center; justify-content: center;
+  padding: 2rem; cursor: zoom-out; overflow: auto;
+}
+.lightbox.active { display: flex; }
+.lightbox img {
+  max-width: 95%; max-height: 90vh; border-radius: 0.5rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: zoom-in; transform-origin: center center;
+}
+.lightbox.zoomed { align-items: flex-start; }
+.lightbox.zoomed img { transform: scale(1.8); cursor: zoom-out; }
+/* Make character images and flip-card back images openable */
+.flip-card-back img:not(.silhouette) { cursor: zoom-in; }
+.lightbox-close {
+  position: absolute; top: 1rem; left: 1rem;
+  background: #e63946; color: #fff;
+  width: 50px; height: 50px; border-radius: 50%;
+  font-size: 1.5rem; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; border: none; z-index: 2;
+}
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.1); color: #fff;
+  width: 56px; height: 56px; border-radius: 50%;
+  font-size: 2.5rem; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 2; padding-bottom: 4px;
+}
+.lightbox-nav:hover { background: rgba(212,168,75,0.6); transform: translateY(-50%) scale(1.08); }
+.lightbox-next { left: 1.25rem; }   /* RTL: next on the left */
+.lightbox-prev { right: 1.25rem; }
+.lightbox.single-image .lightbox-nav { display: none; }
+.lightbox-counter {
+  position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,0.5); color: #F5D78E;
+  padding: 0.4rem 1rem; border-radius: 9999px;
+  font-weight: 700; font-size: 0.875rem; z-index: 2;
+  border: 1px solid rgba(212,168,75,0.3);
+}
+.lightbox.single-image .lightbox-counter { display: none; }
+@media (max-width: 640px) {
+  .lightbox-nav { width: 44px; height: 44px; font-size: 2rem; }
+  .lightbox-next { left: 0.5rem; }
+  .lightbox-prev { right: 0.5rem; }
+}
+
+/* Credits */
+.credits-row {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,168,75,0.15);
+  transition: all 0.3s ease;
+}
+.credits-row:hover {
+  background: rgba(212,168,75,0.08);
+  border-color: rgba(212,168,75,0.4);
+  transform: translateX(-5px);
+}
+
+/* Divider */
+.divider-snow { display: flex; align-items: center; gap: 1rem; color: rgba(126,200,227,0.5); }
+.divider-snow::before, .divider-snow::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,168,75,0.4), transparent);
+}
+
+/* Counter */
+.counter-badge {
+  background: linear-gradient(135deg, #D4A84B, #F5D78E);
+  color: #1A2744; font-weight: 800;
+  padding: 0.5rem 1.25rem; border-radius: 9999px;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(212,168,75,0.4);
+}
+
+/* Why card */
+.why-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(126,200,227,0.2);
+  border-radius: 1.25rem; padding: 2rem;
+  transition: all 0.4s ease; position: relative; overflow: hidden;
+}
+.why-card::before {
+  content: ''; position: absolute; top: -50%; right: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(212,168,75,0.1) 0%, transparent 50%);
+  opacity: 0; transition: opacity 0.5s;
+}
+.why-card:hover::before { opacity: 1; }
+.why-card:hover {
+  border-color: rgba(212,168,75,0.5);
+  transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Hero glow */
+.hero-glow {
+  position: absolute; width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,215,142,0.3) 0%, transparent 70%);
+  filter: blur(40px); pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+/* Buy section */
+.buy-section {
+  background:
+    radial-gradient(ellipse at top, rgba(212,168,75,0.2), transparent 60%),
+    linear-gradient(135deg, #1A2744 0%, #0F1828 100%);
+  border-top: 3px solid rgba(212,168,75,0.3);
+  border-bottom: 3px solid rgba(212,168,75,0.3);
+  position: relative; overflow: hidden;
+}
+
+.logo-glow { filter: drop-shadow(0 0 20px rgba(212,168,75,0.5)); }
+
+/* Countdown */
+.countdown-box {
+  background: linear-gradient(145deg, rgba(212,168,75,0.15), rgba(245,215,142,0.05));
+  border: 2px solid rgba(212,168,75,0.4);
+  border-radius: 1rem; padding: 1rem 0.5rem;
+  min-width: 70px; text-align: center;
+}
+.countdown-num {
+  font-family: 'Cairo', sans-serif; font-weight: 900;
+  font-size: 2.25rem; line-height: 1;
+  background: linear-gradient(135deg, #F5D78E, #D4A84B);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.countdown-label { font-size: 0.75rem; color: #C8E8F5; margin-top: 0.25rem; font-weight: 700; }
+@media (min-width: 640px) {
+  .countdown-box { min-width: 90px; padding: 1.5rem 1rem; }
+  .countdown-num { font-size: 3rem; }
+  .countdown-label { font-size: 0.875rem; }
+}
+
+/* FAQ accordion */
+.faq-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,168,75,0.2);
+  border-radius: 1rem; overflow: hidden;
+  transition: all 0.3s ease;
+}
+.faq-item.open { border-color: rgba(212,168,75,0.5); background: rgba(212,168,75,0.05); }
+.faq-question {
+  width: 100%; text-align: right;
+  padding: 1.25rem 1.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: transparent; border: none; color: #F5D78E;
+  font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 1.05rem;
+  cursor: pointer;
+}
+.faq-arrow { transition: transform 0.3s ease; color: #7EC8E3; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 1.5rem; color: rgba(255,255,255,0.85); line-height: 1.8;
+}
+.faq-item.open .faq-answer { max-height: 300px; padding: 0 1.5rem 1.25rem; }
+
+/* Schools/Groups */
+.schools-card {
+  background: linear-gradient(135deg, rgba(126,200,227,0.1), rgba(200,232,245,0.05));
+  border: 2px dashed rgba(126,200,227,0.4);
+  border-radius: 1.5rem;
+  padding: 2rem; text-align: center;
+}
+
+/* Share buttons */
+.share-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.65rem 1.25rem; border-radius: 9999px;
+  font-weight: 700; transition: all 0.3s ease;
+  border: 2px solid;
+}
+.share-wa { background: #25D366; color: #fff; border-color: #25D366; }
+.share-wa:hover { background: #1ebe57; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+.share-copy { background: transparent; color: #F5D78E; border-color: #F5D78E; }
+.share-copy:hover { background: rgba(212,168,75,0.15); transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  .btn-ticket { padding: 0.7rem 1.1rem; font-size: 0.95rem; }
+  .btn-ticket-big { padding: 1rem 1.75rem; font-size: 1.05rem; }
+  .flip-card { height: 280px; }
+  /* Make header ticket button stand out more on mobile */
+  #site-header .btn-ticket {
+    font-weight: 900;
+    box-shadow: 0 4px 18px rgba(230,57,70,0.6), inset 0 1px 0 rgba(255,255,255,0.3);
+    animation: pulseTicket 2.5s ease-in-out infinite;
+  }
+}
+
+/* Footer icons */
+.social-icon {
+  width: 50px; height: 50px; border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,168,75,0.3);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s; color: #F5D78E;
+}
+.social-icon:hover {
+  background: linear-gradient(135deg, #D4A84B, #F5D78E);
+  color: #1A2744; transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(212,168,75,0.4);
+}
+
+.num-circle {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: linear-gradient(135deg, #7EC8E3, #C8E8F5);
+  color: #1A2744;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.75rem; font-weight: 900;
+  font-family: 'Cairo'; box-shadow: 0 6px 20px rgba(126,200,227,0.4);
+}
+
+/* Toast */
+.toast {
+  position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+  background: #1A2744; color: #F5D78E;
+  padding: 1rem 1.5rem; border-radius: 9999px;
+  border: 2px solid #D4A84B;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  font-weight: 700; z-index: 200;
+  opacity: 0; transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(-10px); }
+
+/* Reviews */
+.review-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(212,168,75,0.2);
+  border-radius: 1.25rem; padding: 1.75rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative; height: 100%;
+  display: flex; flex-direction: column;
+}
+.review-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212,168,75,0.5);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+}
+.review-card::before {
+  content: '\201D'; position: absolute; top: 0.5rem; left: 1.25rem;
+  font-family: 'Cairo', serif; font-size: 4rem; line-height: 1;
+  color: rgba(212,168,75,0.25);
+}
+.review-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  border: 2px solid rgba(212,168,75,0.5); object-fit: cover;
+  background: #1A2744; flex-shrink: 0;
+}
+.review-initial {
+  width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+  border: 2px solid rgba(212,168,75,0.5);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cairo', sans-serif; font-weight: 900; font-size: 1.6rem;
+  background: linear-gradient(135deg, #D4A84B, #F5D78E); color: #1A2744;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.review-stars { display: inline-flex; gap: 2px; }
+.review-stars svg { width: 18px; height: 18px; }
+
+/* Enhanced Schools card */
+.schools-pro {
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, rgba(212,168,75,0.14), rgba(126,200,227,0.06));
+  border: 2px solid rgba(212,168,75,0.45);
+  border-radius: 1.5rem; padding: 2.5rem 2rem;
+}
+.schools-pro::before {
+  content: ''; position: absolute; top: -60%; right: -30%;
+  width: 400px; height: 400px; pointer-events: none;
+  background: radial-gradient(circle, rgba(212,168,75,0.18) 0%, transparent 60%);
+}
+.schools-feature {
+  display: flex; align-items: center; gap: 0.65rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(126,200,227,0.2);
+  border-radius: 9999px; padding: 0.55rem 1rem;
+  font-weight: 700; font-size: 0.9rem; color: #C8E8F5;
+}
+.schools-feature svg { width: 18px; height: 18px; color: #F5D78E; flex-shrink: 0; }
+
+/* Floating WhatsApp button */
+.wa-float {
+  position: fixed; bottom: 22px; right: 18px; z-index: 300;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: #25D366; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+  border: 2px solid rgba(255,255,255,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.wa-float svg { width: 32px; height: 32px; }
+.wa-float::after {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid #25D366; pointer-events: none;
+  animation: waPulse 2.2s ease-out infinite;
+}
+@keyframes waPulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  80%  { transform: scale(1.5); opacity: 0;   }
+  100% { transform: scale(1.5); opacity: 0;   }
+}
+.wa-float:hover { transform: scale(1.08); box-shadow: 0 8px 30px rgba(37,211,102,0.7); }
+.wa-float-label {
+  position: absolute; right: 72px; white-space: nowrap;
+  background: #1A2744; color: #fff; font-weight: 700; font-size: 0.85rem;
+  padding: 0.5rem 0.9rem; border-radius: 9999px;
+  border: 1px solid rgba(212,168,75,0.4);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  opacity: 0; transform: translateX(8px); transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+}
+.wa-float:hover .wa-float-label { opacity: 1; transform: translateX(0); }
+@media (max-width: 640px) { .wa-float-label { display: none; } }
+
+/* Reduced motion — WCAG accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .snowflake, .hero-glow, .aurora { display: none !important; }
+  .gold-text { animation: none !important; background-position: 0 0 !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .btn-ticket-big::after { display: none !important; }
+  .wa-float::after { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Loading screen -->
+<div id="loader">
+  <div class="loader-logo brand-logo" role="img" aria-label="مسرح الخيال"></div>
+  <div class="mt-6 text-gold-light font-cairo font-black text-xl">مسرح الخيال</div>
+  <div class="mt-2 text-ice-light text-sm">يحمّل السحر...</div>
+</div>
+
+<!-- Snow -->
+<div id="snow-container"></div>
+
+<!-- HEADER -->
+<header id="site-header" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300">
+  <div class="glass border-b border-white/10">
+    <div class="container mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div role="img" aria-label="مسرح الخيال" class="brand-logo h-12 sm:h-14 w-12 sm:w-14 logo-glow group-hover:scale-110 transition-transform"></div>
+        <div class="hidden sm:block">
+          <div class="text-gold-light font-cairo font-black text-lg leading-tight">مسرح الخيال</div>
+          <div class="text-ice-light text-xs">الناصرة</div>
+        </div>
+      </a>
+      <a href="#buy" class="btn-ticket">
+        <span>🎭</span>
+        <span>احجزوا العرض</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="hero-bg min-h-screen flex items-center justify-center relative pt-24 pb-12 px-4">
+  <div id="hero-clip" aria-hidden="true"><div id="hero-zoom"></div></div>
+  <div id="hero-zoom-scrim" aria-hidden="true"></div>
+  <div class="aurora"></div>
+  <div class="hero-glow top-20 right-10"></div>
+  <div class="hero-glow bottom-20 left-10" style="animation-delay: 2s;"></div>
+
+  <div class="container mx-auto max-w-5xl text-center relative z-10">
+
+    <!-- Promo video — autoplays muted, shrinks to a floating mini-player on scroll -->
+    <div id="promo-wrap" class="mb-8 mx-auto w-full max-w-2xl">
+      <div id="promo-box" class="rounded-2xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-navy-dark relative" style="aspect-ratio: 16/9;">
+        <button id="promo-close" aria-label="إغلاق الفيديو">✕</button>
+        <button id="promo-expand" aria-label="تكبير الفيديو">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="promo-facade" class="absolute inset-0 w-full h-full" role="button" tabindex="0" aria-label="تشغيل العرض الترويجي">
+          <span id="promo-play"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-6 flex justify-center gap-2 text-3xl sm:text-4xl">
+      <span>❄️</span><span>✨</span><span>❄️</span>
+    </div>
+
+    <div class="inline-block mb-4 px-4 py-2 rounded-full glass border border-ice/30">
+      <span class="text-ice-light font-bold text-sm sm:text-base">🎭 مسرح الخيال — الناصرة يُقدّم مسرحية</span>
+    </div>
+
+    <h1 class="text-5xl sm:text-7xl md:text-8xl font-black mb-6" style="line-height: 1.6;">
+      <span class="gold-text" style="display: inline-block; padding-bottom: 0.15em;">من يوقظ</span>
+      <br>
+      <span class="ice-text" style="display: inline-block;">الشّمس؟</span>
+    </h1>
+
+    <p class="text-xl sm:text-2xl text-ice-light mb-8 font-tajawal font-medium max-w-2xl mx-auto">
+      رحلة <span class="text-gold-light">كائنان ثلجيان</span> نحو الشمس
+    </p>
+
+    <!-- دعوة للحجز — بدل عدّاد العرض القديم -->
+    <div class="mb-8">
+      <div class="glass rounded-2xl px-6 py-5 border border-gold/30 max-w-xl mx-auto">
+        <div class="text-gold-light font-cairo font-black text-lg sm:text-xl mb-1">
+          🎭 بنجيب العرض لعندكم
+        </div>
+        <div class="text-ice-light text-sm sm:text-base">
+          للروضات والمدارس والمراكز الجماهيرية — مع الديكور والدمى والإضاءة.
+        </div>
+      </div>
+    </div>
+
+    <!-- Info cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto mb-10">
+      <div class="glass rounded-2xl p-4 border border-gold/20">
+        <div class="text-2xl mb-1">👧</div>
+        <div class="text-gold-light font-cairo font-bold text-sm">الجيل</div>
+        <div class="text-white text-xs sm:text-sm mt-1">من <bdi dir="ltr">3</bdi><br>لـ<bdi dir="ltr">10</bdi> سنوات</div>
+      </div>
+      <div class="glass rounded-2xl p-4 border border-gold/20">
+        <div class="text-2xl mb-1">⏰</div>
+        <div class="text-gold-light font-cairo font-bold text-sm">المدة</div>
+        <div class="text-white text-xs sm:text-sm mt-1"><bdi dir="ltr">60</bdi><br>دقيقة</div>
+      </div>
+      <div class="glass rounded-2xl p-4 border border-gold/20">
+        <div class="text-2xl mb-1">📍</div>
+        <div class="text-gold-light font-cairo font-bold text-sm">المكان</div>
+        <div class="text-white text-xs sm:text-sm mt-1">بنوصل<br>لعندكم</div>
+      </div>
+      <div class="glass rounded-2xl p-4 border border-gold/20">
+        <div class="text-2xl mb-1">🎭</div>
+        <div class="text-gold-light font-cairo font-bold text-sm">النوع</div>
+        <div class="text-white text-xs sm:text-sm mt-1">دمى<br>وتمثيل</div>
+      </div>
+    </div>
+
+    <a href="#buy" class="btn-ticket btn-ticket-big">
+      <span>🎭</span>
+      <span>احجزوا العرض</span>
+      <span>↓</span>
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 px-4 relative">
+  <div class="container mx-auto max-w-4xl">
+    <div class="reveal text-center mb-12">
+      <div class="divider-snow mb-6"><span>❄️</span></div>
+      <h2 class="text-4xl sm:text-5xl font-black mb-4"><span class="gold-text">عن المسرحية</span></h2>
+      <p class="text-ice-light text-lg">حكاية بصرية تجمع بين الضحك والمشاعر</p>
+    </div>
+
+    <div class="reveal glass rounded-3xl p-8 sm:p-12 border-2 border-gold/20 relative">
+      <div class="absolute -top-6 right-1/2 translate-x-1/2 text-5xl">❄️</div>
+      <div class="space-y-6 text-lg sm:text-xl leading-loose text-white/90 font-tajawal">
+        <p>في كوكبٍ ما يكسوه البياض، يولد من الثلج كائنان ثلجيّان <span class="text-gold-light font-bold">(صبيّ وبنت)</span>. يعرفان من هما، ولكنّهما حديثا الولادة وقليلا التجربة ولم يريا الشمس من قبل. وحين يكتشفان أنّ <span class="text-ice-light font-bold">شروقها يعني ذوبانهما</span>، ينطلقان في رحلة شجاعة للبحث عنها، على أمل إقناعها بألّا تشرق.</p>
+
+        <p>خلال رحلتهما، يلتقيان بسكّان الكوكب: <span class="text-gold-light">سنجاب فخور بنفسه</span> يحبّ الحياة والدفء، <span class="text-gold-light">قنفذ يرتجف من البرد</span> يبحث عن جحر دافئ، <span class="text-gold-light">أرنب جائع</span> يحلم بقطعة من الجزر، و<span class="text-gold-light">غراب حكيم</span> يدعو الشمس وينتظر شروقها.</p>
+
+        <p>ليجدا نفسَيهما أمام سؤال يتكرّر في كلّ محطّة: <span class="text-ice-light font-bold italic">هل يُصرّان على رغبتهما، أم يتنازلان لمن يحتاج الشمس أكثر؟</span></p>
+
+        <p>رحلة تتحوّل من بحث عن البقاء إلى اكتشاف معنى أعمق للحياة، حكاية بصرية تجمع بين الضحك والمشاعر، وتفتح باب التساؤل حول قيم المحبّة، المشاركة، العطاء والتضحية.</p>
+      </div>
+    </div>
+
+    <div class="reveal mt-10 flex flex-wrap justify-center gap-3">
+      <span class="tag-pill"><span>❤️</span> المحبّة</span>
+      <span class="tag-pill"><span>🤝</span> المشاركة</span>
+      <span class="tag-pill"><span>🎁</span> العطاء</span>
+      <span class="tag-pill"><span>✨</span> التضحية</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTERS -->
+<section id="characters" class="py-20 px-4 relative" style="background: linear-gradient(180deg, transparent 0%, rgba(15,24,40,0.5) 50%, transparent 100%);">
+  <div class="container mx-auto max-w-6xl">
+    <div class="reveal text-center mb-12">
+      <div class="divider-snow mb-6"><span>🎭</span></div>
+      <h2 class="text-4xl sm:text-5xl font-black mb-4"><span class="gold-text">اكتشف الشخصيات</span></h2>
+      <p class="text-ice-light text-lg mb-6">اضغط على كل ظل لتكتشف من يختبئ خلفه...</p>
+      <div id="counter" class="counter-badge">
+        <span>✨</span>
+        <span>اكتشفت <span id="counter-num">0</span>/6 شخصيات</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      <!-- 1: الصبي الثلجي -->
+      <div class="flip-card reveal" data-char="boy">
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front p-6">
+            <img src="images/snow_boy.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <div class="text-4xl mb-2">❄️</div>
+            <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
+          </div>
+          <div class="flip-card-face flip-card-back p-6">
+            <img src="images/snow_boy.webp" alt="الصبي الثلجي" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <h3 class="font-cairo font-black text-2xl text-navy">الصبي الثلجي</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: البنت الثلجية -->
+      <div class="flip-card reveal" data-char="girl">
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front p-6">
+            <img src="images/snow_girl.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <div class="text-4xl mb-2">❄️</div>
+            <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
+          </div>
+          <div class="flip-card-face flip-card-back p-6">
+            <img src="images/snow_girl.webp" alt="البنت الثلجية" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <h3 class="font-cairo font-black text-2xl text-navy">البنت الثلجية</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: السنجاب -->
+      <div class="flip-card reveal" data-char="squirrel">
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front p-6">
+            <img src="images/squirrel.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <div class="text-4xl mb-2">❄️</div>
+            <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
+          </div>
+          <div class="flip-card-face flip-card-back p-6">
+            <img src="images/squirrel.webp" alt="السنجاب" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <h3 class="font-cairo font-black text-2xl text-navy">السنجاب</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4: القنفذ -->
+      <div class="flip-card reveal" data-char="hedgehog">
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front p-6">
+            <img src="images/hedgehog.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <div class="text-4xl mb-2">❄️</div>
+            <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
+          </div>
+          <div class="flip-card-face flip-card-back p-6">
+            <img src="images/hedgehog.webp" alt="القنفذ" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <h3 class="font-cairo font-black text-2xl text-navy">القنفذ</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5: الأرنب -->
+      <div class="flip-card reveal" data-char="rabbit">
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front p-6">
+            <img src="images/rabbit.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <div class="text-4xl mb-2">❄️</div>
+            <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
+          </div>
+          <div class="flip-card-face flip-card-back p-6">
+            <img src="images/rabbit.webp" alt="الأرنب" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <h3 class="font-cairo font-black text-2xl text-navy">الأرنب</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6: الغراب -->
+      <div class="flip-card reveal" data-char="crow">
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front p-6">
+            <img src="images/crow.webp" alt="ظل" loading="lazy" class="silhouette w-32 h-32 object-cover rounded-full mb-4">
+            <div class="text-4xl mb-2">❄️</div>
+            <div class="text-ice-light font-cairo font-bold">اضغط لتكتشف</div>
+          </div>
+          <div class="flip-card-face flip-card-back p-6">
+            <img src="images/crow.webp" alt="الغراب" loading="lazy" class="w-40 h-40 object-cover rounded-full mb-4 border-4 border-white shadow-xl">
+            <h3 class="font-cairo font-black text-2xl text-navy">الغراب</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="all-revealed" class="mt-12 text-center opacity-0 transition-all duration-700 pointer-events-none">
+      <div class="glass rounded-3xl p-8 sm:p-10 border-2 border-gold/40 max-w-2xl mx-auto">
+        <div class="text-5xl mb-4">🎭✨🎭</div>
+        <h3 class="text-xl sm:text-2xl font-black mb-6"><span class="ice-text">هذه مجرّد لمحة...</span><br><span class="gold-text">وحكايتهم الحقيقية تنتظركم على المسرح</span></h3>
+        <a href="#buy" class="btn-ticket btn-ticket-big">
+          <span>🎭</span>
+          <span>احجزوا العرض لعندكم</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY COME -->
+<section id="why" class="py-20 px-4 relative">
+  <div class="container mx-auto max-w-5xl">
+    <div class="reveal text-center mb-12">
+      <div class="divider-snow mb-6"><span>✨</span></div>
+      <h2 class="text-4xl sm:text-5xl font-black mb-4"><span class="ice-text">ليش تيجوا؟</span></h2>
+      <p class="text-gold-light text-lg">تجربة عائلية لا تُنسى</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="reveal why-card">
+        <div class="flex items-start gap-4">
+          <div class="num-circle flex-shrink-0">🎨</div>
+          <div>
+            <h3 class="font-cairo font-black text-xl text-gold-light mb-2">عرض بصري مدهش</h3>
+            <p class="text-white/80 leading-relaxed">دمى كبيرة، شخصيات حيّة، ديكور مذهل، وعالم سحري يخطف الأنفاس على المسرح.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal why-card">
+        <div class="flex items-start gap-4">
+          <div class="num-circle flex-shrink-0">😊</div>
+          <div>
+            <h3 class="font-cairo font-black text-xl text-gold-light mb-2">تجربة عائلية شاملة</h3>
+            <p class="text-white/80 leading-relaxed">تجمع الضحك والمشاعر والرسالة الحقيقية، تخاطب الكبير قبل الصغير.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal why-card">
+        <div class="flex items-start gap-4">
+          <div class="num-circle flex-shrink-0">👨‍👩‍👧</div>
+          <div>
+            <h3 class="font-cairo font-black text-xl text-gold-light mb-2">مناسب لجيل 3-10</h3>
+            <p class="text-white/80 leading-relaxed">قصة مكتوبة بلغة عربية بسيطة وجميلة، تناسب الأطفال وتسحر الأهالي.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal why-card">
+        <div class="flex items-start gap-4">
+          <div class="num-circle flex-shrink-0">💝</div>
+          <div>
+            <h3 class="font-cairo font-black text-xl text-gold-light mb-2">قيم حقيقية</h3>
+            <p class="text-white/80 leading-relaxed">حكاية تزرع المحبّة والمشاركة والعطاء والتضحية — دروس تبقى في القلب.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal mt-12 text-center">
+      <a href="#buy" class="btn-ticket btn-ticket-big">
+        <span>🎭</span>
+        <span>احجزوا العرض لولادكم</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="py-20 px-4 relative">
+  <div class="container mx-auto max-w-6xl">
+    <div class="reveal text-center mb-12">
+      <div class="divider-snow mb-6"><span>⭐</span></div>
+      <h2 class="text-4xl sm:text-5xl font-black mb-4"><span class="gold-text">شو حكوا الأهالي؟</span></h2>
+      <p class="text-ice-light text-lg">تقييمات حقيقية من عائلات حضرت عروضنا</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Review 1 -->
+      <div class="reveal review-card">
+        <div class="review-stars mb-4" aria-label="5 من 5 نجوم">
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-white/85 leading-relaxed flex-grow">
+          "صراحةً من أحلى العروض اللي حضرناها! الأولاد ما رمشولهم عيون من أول دقيقة لآخر وحدة. الموسيقى والألوان والقصة كلشي مدروس. رح نحضر كل عروضكم الجاية أكيد 💛"
+        </p>
+        <div class="flex items-center gap-3 mt-5 pt-5 border-t border-white/10">
+          <div class="review-initial" role="img" aria-label="دعاء عرابية">د</div>
+          <div>
+            <p class="font-cairo font-bold text-gold-light">دعاء عرابية</p>
+            <p class="text-white/50 text-sm">معلّمة وأم — الناصرة</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="reveal review-card">
+        <div class="review-stars mb-4" aria-label="5 من 5 نجوم">
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-white/85 leading-relaxed flex-grow">
+          "تجربة مختلفة عن أيّ عرض حضرناه قبل! العالم الثلجي على المسرح كان مبهر بالديكور والإضاءة، والقصة لمست قلبي قبل الأولاد. طلعنا كلّنا مبسوطين ومتأثّرين — شغل بيشهدله مسرح الخيال 👏"
+        </p>
+        <div class="flex items-center gap-3 mt-5 pt-5 border-t border-white/10">
+          <div class="review-initial" role="img" aria-label="كليمانس عوّاد" style="background:linear-gradient(135deg,#7EC8E3,#C8E8F5);">ك</div>
+          <div>
+            <p class="font-cairo font-bold text-gold-light">كليمانس عوّاد</p>
+            <p class="text-white/50 text-sm">معلّمة — الناصرة</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="reveal review-card">
+        <div class="review-stars mb-4" aria-label="5 من 5 نجوم">
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F5D78E"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-white/85 leading-relaxed flex-grow">
+          "كمعلّمة، بقيّم العرض من ناحية تربوية ٥ من ٥. لغة عربية سليمة وجميلة، قيم حقيقية، وتفاعل رائع مع الأطفال. حجزنا كصفّ كامل والتجربة كانت لا تُنسى!"
+        </p>
+        <div class="flex items-center gap-3 mt-5 pt-5 border-t border-white/10">
+          <div class="review-initial" role="img" aria-label="رنا خطيب">ر</div>
+          <div>
+            <p class="font-cairo font-bold text-gold-light">رنا خطيب</p>
+            <p class="text-white/50 text-sm">معلّمة وأمّ — كفر كنا</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-20 px-4 relative" style="background: linear-gradient(180deg, transparent 0%, rgba(15,24,40,0.4) 50%, transparent 100%);">
+  <div class="container mx-auto max-w-6xl">
+    <div class="reveal text-center mb-12">
+      <div class="divider-snow mb-6"><span>📸</span></div>
+      <h2 class="text-4xl sm:text-5xl font-black mb-4"><span class="gold-text">من كواليس العرض</span></h2>
+      <p class="text-ice-light text-lg">لمحات من العالم السحري الذي ينتظركم</p>
+    </div>
+
+    <!-- Photo gallery -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+      <div class="gallery-item reveal"><img src="images/poster.webp" alt="بوستر المسرحية" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/group.webp" alt="من العرض" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_a.webp" alt="الشخصيات الثلجية على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_b.webp" alt="الشخصيات الثلجية على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/show1.webp" alt="من العرض" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/show2.webp" alt="من العرض" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_c.webp" alt="السنجاب على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_d.webp" alt="القنفذ على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/show3.webp" alt="من العرض" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/show4.webp" alt="من العرض" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_e.webp" alt="الأرنب على المسرح" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="images/stage_f.webp" alt="الغراب على المسرح" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHOOLS & GROUPS -->
+<section id="schools" class="py-20 px-4 relative">
+  <div class="container mx-auto max-w-4xl">
+    <div class="reveal text-center mb-10">
+      <div class="divider-snow mb-6"><span>🏫</span></div>
+      <h2 class="text-4xl sm:text-5xl font-black mb-4"><span class="ice-text">للمدارس والمراكز</span></h2>
+      <p class="text-gold-light text-lg">عرض خاص للمجموعات</p>
+    </div>
+
+    <div class="reveal schools-pro">
+      <div class="relative text-center">
+        <span class="tag-pill mb-5"><span>🎓</span><span>عرض خاص للمجموعات</span></span>
+        <h3 class="font-cairo font-black text-2xl sm:text-3xl text-gold-light mb-3">جايين كمدرسة أو مركز؟</h3>
+        <p class="text-white/85 leading-relaxed mb-7 max-w-2xl mx-auto">
+          نوفّر <span class="text-gold-light font-bold">أسعاراً خاصة</span> للمدارس، الحضانات، رياض الأطفال، والمراكز الجماهيرية —
+          مع تنسيق مرن للمواعيد والباصات يناسب مجموعتكم.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <span class="schools-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            أسعار مخفّضة للمجموعات
+          </span>
+          <span class="schools-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            مواعيد مرنة حسب طلبكم
+          </span>
+          <span class="schools-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            تنسيق الباصات والوصول
+          </span>
+          <span class="schools-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            عرض تربوي بقيم حقيقية
+          </span>
+        </div>
+
+        <a href="https://api.whatsapp.com/send?phone=972547667317&text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B3%D8%B1%D8%AD%20%D8%A7%D9%84%D8%AE%D9%8A%D8%A7%D9%84%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D8%AC%D8%B2%20%D8%AC%D9%85%D8%A7%D8%B9%D9%8A%20%D9%84%D9%85%D8%B3%D8%B1%D8%AD%D9%8A%D8%A9%20%D9%85%D9%86%20%D9%8A%D9%88%D9%82%D8%B8%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3" target="_blank" rel="noopener" class="share-btn share-wa text-base">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+          <span>تواصل عبر واتساب للحجز الجماعي</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 px-4 relative">
+  <div class="container mx-auto max-w-3xl">
+    <div class="reveal text-center mb-12">
+      <div class="divider-snow mb-6"><span>❓</span></div>
+      <h2 class="text-4xl sm:text-5xl font-black mb-4"><span class="gold-text">أسئلة شائعة</span></h2>
+      <p class="text-ice-light text-lg">كل شي بدّك تعرفه قبل ما تيجي</p>
+    </div>
+
+    <div class="space-y-4">
+      <div class="reveal faq-item">
+        <button class="faq-question"><span>كم مدة العرض؟</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-answer"><p>العرض مدته حوالي 50-60 دقيقة، مناسبة تماماً لجمهور الأطفال من جيل 3 سنوات وما فوق دون أن يشعروا بالملل.</p></div>
+      </div>
+      <div class="reveal faq-item">
+        <button class="faq-question"><span>هل المسرحية مناسبة لعمر طفلي؟</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-answer"><p>المسرحية مصمّمة لجيل 3-10 سنوات، لكن الرسالة والتجربة البصرية تناسب كل أفراد العائلة. اللغة عربية فصحى بسيطة وسلسة.</p></div>
+      </div>
+      <div class="reveal faq-item">
+        <button class="faq-question"><span>كيف بنحجز العرض؟</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-answer"><p>احكوا معنا على واتساب أو تلفون <bdi dir="ltr">054-766-7317</bdi>. بنسألكم عن عدد الولاد، الجيل، والمساحة اللي عندكم، وبنتفق على التاريخ والسعر. بنيجي لعندكم مع الديكور والدمى والإضاءة.</p></div>
+      </div>
+      <div class="reveal faq-item">
+        <button class="faq-question"><span>هل في تخفيضات للعائلات أو المجموعات؟</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-answer"><p>للمجموعات الكبيرة (مدارس، حضانات، مراكز) في عروض خاصة. تواصلوا معنا عبر واتساب وبنرتّبلكم تنسيق مخصّص.</p></div>
+      </div>
+      <div class="reveal faq-item">
+        <button class="faq-question"><span>وين بالضبط القصر الثقافي بالناصرة؟</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-answer"><p>القصر الثقافي في الناصرة هو القاعة المعروفة. اضغطوا للوصول مباشرة: <a href="https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%84%D9%82%D8%B5%D8%B1%20%D8%A7%D9%84%D8%AB%D9%82%D8%A7%D9%81%D9%8A%20%D8%A7%D9%84%D9%86%D8%A7%D8%B5%D8%B1%D8%A9" target="_blank" rel="noopener" class="text-gold-light underline font-bold">📍 القصر الثقافي على خرائط جوجل</a> — أو تواصلوا معنا للإرشادات.</p></div>
+      </div>
+      <div class="reveal faq-item">
+        <button class="faq-question"><span>إذا كان عندي استفسار أو طلب خاص؟</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-answer"><p>تواصلوا معنا مباشرة عبر واتساب على رقم <bdi dir="ltr">054-766-7317</bdi> أو من خلال صفحاتنا على انستغرام وفيسبوك. بنرد عليكم بأسرع وقت.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDITS -->
+<section id="credits" class="py-20 px-4 relative">
+  <div class="container mx-auto max-w-4xl">
+    <div class="reveal text-center mb-12">
+      <div class="divider-snow mb-6"><span>🌟</span></div>
+      <h2 class="text-4xl sm:text-5xl font-black mb-4"><span class="ice-text">فريق العمل</span></h2>
+      <p class="text-gold-light text-lg">إبداع جماعي خلف الكواليس</p>
+    </div>
+
+    <div class="reveal space-y-2">
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">🎬 إخراج</span>
+        <span class="text-white text-lg">فؤاد عوض</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">🎭 تمثيل</span>
+        <span class="text-white text-lg">بيان حاج، نيكول ميخائيل، نور أبو حريري ورنين سويد</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">📋 مدير إنتاج</span>
+        <span class="text-white text-lg">محمد سليمان منادرة</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">📝 مساعدة إنتاج</span>
+        <span class="text-white text-lg">مجدولين أبو سمرة</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">🎬 مساعد مخرج</span>
+        <span class="text-white text-lg">نجد منادرة</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">🏗️ تصميم وبناء ديكور</span>
+        <span class="text-white text-lg">مروان صُبّاح</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">🎵 تأليف موسيقى وألحان</span>
+        <span class="text-white text-lg">معين دانيال</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">🎎 تصميم الدمى وملابس المحرّكين</span>
+        <span class="text-white text-lg">عينات سندروفيتش</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">👗 تصميم ملابس الشخصيات الثلجية</span>
+        <span class="text-white text-lg">غصوب سرحان</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">💡 تصميم إضاءة</span>
+        <span class="text-white text-lg">مطانس مزاوي</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">✍️ إعداد</span>
+        <span class="text-white text-lg">ميخائيل يريمتشوك — عن قصّة رومانية</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">📖 ترجمة</span>
+        <span class="text-white text-lg">د. سمير عثمان الباش</span>
+      </div>
+      <div class="credits-row rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <span class="text-gold-light font-cairo font-bold min-w-[180px]">🎭 إنتاج</span>
+        <span class="text-white text-lg">مسرح الخيال – الناصرة، أيّار 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY -->
+<section id="buy" class="buy-section py-20 px-4">
+  <div class="container mx-auto max-w-4xl text-center relative z-10">
+    <div class="reveal mb-8">
+      <div class="text-6xl mb-4">🎭</div>
+      <h2 class="text-4xl sm:text-6xl font-black mb-4"><span class="gold-text">احجزوا العرض</span></h2>
+      <p class="text-ice-light text-xl">للروضة، للمدرسة، أو للمركز الجماهيري — بنيجي لعندكم</p>
+    </div>
+
+    <div class="reveal glass rounded-3xl p-8 sm:p-12 border-2 border-gold/40 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="flex items-center gap-4 justify-center md:justify-start">
+          <div class="text-4xl">👧</div>
+          <div class="text-right">
+            <div class="text-gold-light font-cairo font-bold text-sm">الجيل</div>
+            <div class="text-white text-xl font-bold">من <bdi dir="ltr">3</bdi> لـ<bdi dir="ltr">10</bdi> سنوات</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 justify-center md:justify-start">
+          <div class="text-4xl">⏰</div>
+          <div class="text-right">
+            <div class="text-gold-light font-cairo font-bold text-sm">المدة</div>
+            <div class="text-white text-xl font-bold"><bdi dir="ltr">60</bdi> دقيقة</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 justify-center md:justify-start">
+          <div class="text-4xl">📍</div>
+          <div class="text-right">
+            <div class="text-gold-light font-cairo font-bold text-sm">المكان</div>
+            <div class="text-white text-xl font-bold">بنوصل لعندكم</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 justify-center md:justify-start">
+          <div class="text-4xl">🎭</div>
+          <div class="text-right">
+            <div class="text-gold-light font-cairo font-bold text-sm">النوع</div>
+            <div class="text-white text-xl font-bold">دمى وتمثيل</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gold/20 pt-8">
+        <a href="https://wa.me/972547667317?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%21%20%D8%A8%D8%AF%D9%86%D8%A7%20%D9%86%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AD%D8%AC%D8%B2%20%D8%B9%D8%B1%D8%B6%20%C2%AB%D9%85%D9%86%20%D9%8A%D9%88%D9%82%D8%B8%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3%D8%9F%C2%BB" target="_blank" rel="noopener" class="btn-ticket btn-ticket-big text-xl">
+          <span>📱</span>
+          <span>احجزوا عبر واتساب</span>
+          <span>←</span>
+        </a>
+        <p class="mt-6 text-ice-light font-cairo font-bold text-lg">
+          أو اتصلوا: <a href="tel:+972547667317" class="text-gold-light hover:underline"><bdi dir="ltr">054-766-7317</bdi></a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Share with friends -->
+    <div class="reveal glass rounded-2xl p-6 max-w-2xl mx-auto border border-ice/20">
+      <h3 class="font-cairo font-black text-xl text-gold-light mb-4">🎉 شارك العرض مع الأصدقاء</h3>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="https://api.whatsapp.com/send?text=%D8%B4%D9%88%D9%81%D9%88%D8%A7%20%D8%A7%D9%84%D9%85%D8%B3%D8%B1%D8%AD%D9%8A%D8%A9%20%D9%87%D8%A7%D9%8A%21%20%D9%85%D9%86%20%D9%8A%D9%88%D9%82%D8%B8%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3%D8%9F%20%D9%85%D9%86%20%D9%85%D8%B3%D8%B1%D8%AD%20%D8%A7%D9%84%D8%AE%D9%8A%D8%A7%D9%84%20-%20%D8%A7%D9%84%D9%86%D8%A7%D8%B5%D8%B1%D8%A9%20%F0%9F%8E%AD%E2%9D%84%EF%B8%8F%20https%3A%2F%2Felkhaialtheater.com" target="_blank" rel="noopener" class="share-btn share-wa">
+          <span>📱</span><span>شارك على واتساب</span>
+        </a>
+        <button onclick="copyLink()" class="share-btn share-copy">
+          <span>🔗</span><span>انسخ الرابط</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-12 px-4 relative" style="background: #0F1828; border-top: 1px solid rgba(212,168,75,0.2);">
+  <div class="container mx-auto max-w-5xl">
+    <div class="text-center mb-8">
+      <div role="img" aria-label="مسرح الخيال" class="brand-logo h-24 w-24 mx-auto mb-4 logo-glow"></div>
+      <h3 class="font-cairo font-black text-2xl gold-text mb-2">مسرح الخيال</h3>
+      <p class="text-ice-light">الناصرة — حيث يولد السحر على المسرح</p>
+    </div>
+
+    <div class="flex justify-center gap-3 mb-8 flex-wrap">
+      <a href="https://api.whatsapp.com/send?phone=972547667317&text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B3%D8%B1%D8%AD%20%D8%A7%D9%84%D8%AE%D9%8A%D8%A7%D9%84%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B3%D8%B1%D8%AD%D9%8A%D8%A9%20%D9%85%D9%86%20%D9%8A%D9%88%D9%82%D8%B8%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3" target="_blank" rel="noopener" class="social-icon" title="واتساب">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+      </a>
+      <a href="https://www.instagram.com/elkhaial_theater/" target="_blank" rel="noopener" class="social-icon" title="انستغرام">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/elkhaial.org/" target="_blank" rel="noopener" class="social-icon" title="فيسبوك">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://linktr.ee/elkhaialtheater" target="_blank" rel="noopener" class="social-icon" title="Linktree">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13.736 5.853l4.005-4.117 2.325 2.38-4.2 4.005h5.908v3.305h-5.937l4.229 4.108-2.325 2.334-5.74-5.769-5.741 5.769-2.325-2.325 4.229-4.108H2.226V8.121h5.909l-4.2-4.005 2.324-2.381 4.005 4.108V0h3.472v5.853zm-3.472 10.306h3.472V24h-3.472v-7.841z"/></svg>
+      </a>
+      <a href="https://youtu.be/aT99Q1iufB4" target="_blank" rel="noopener" class="social-icon" title="يوتيوب">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+
+    <div class="text-center text-ice-light text-sm space-y-2 mb-8">
+      <p>📱 <a href="tel:+972547667317" class="hover:text-gold-light transition"><bdi dir="ltr">054-766-7317</bdi></a></p>
+      <p>📧 <a href="mailto:elkhaialtheater@gmail.com" class="text-gold-light underline font-bold"><bdi dir="ltr">elkhaialtheater@gmail.com</bdi></a></p>
+    </div>
+
+    <div class="divider-snow mb-6"><span>❄️</span></div>
+    <p class="text-center text-white/40 text-sm">© 2026 مسرح الخيال — الناصرة. جميع الحقوق محفوظة.</p>
+    <p class="text-center" style="margin-top:14px;">
+      <a href="watch.html" style="color:rgba(255,255,255,0.28);font-size:12px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#F5B301'" onmouseout="this.style.color='rgba(255,255,255,0.28)'">🔒 مشاهدة خاصّة — للمصرّح لهم</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="إغلاق">✕</button>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="الصورة التالية">‹</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="الصورة السابقة">›</button>
+  <span class="lightbox-counter" id="lightbox-counter"></span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- Floating WhatsApp -->
+<a href="https://api.whatsapp.com/send?phone=972547667317&text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B3%D8%B1%D8%AD%20%D8%A7%D9%84%D8%AE%D9%8A%D8%A7%D9%84%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D8%AC%D8%B2%20%D8%AA%D8%B0%D8%A7%D9%83%D8%B1%20%D9%84%D9%85%D8%B3%D8%B1%D8%AD%D9%8A%D8%A9%20%D9%85%D9%86%20%D9%8A%D9%88%D9%82%D8%B8%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3" target="_blank" rel="noopener" class="wa-float" aria-label="تواصل عبر واتساب">
+  <span class="wa-float-label">احجز عبر واتساب</span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+</a>
+
+<!-- Toast -->
+<div id="toast" class="toast">✅ تم نسخ الرابط!</div>
+
+<script>
+// Loader — hide as soon as DOM is ready, with hard timeout as safety net
+(function() {
+  const loader = document.getElementById('loader');
+  if (!loader) return;
+  let hidden = false;
+  function hideLoader() {
+    if (hidden) return;
+    hidden = true;
+    loader.classList.add('hidden');
+    setTimeout(() => { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 800);
+  }
+  // Hide as soon as DOM is parsed (don't wait for images)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 400));
+  } else {
+    setTimeout(hideLoader, 400);
+  }
+  // Safety net: force-hide after 2.5s no matter what
+  setTimeout(hideLoader, 2500);
+  // Tap to dismiss
+  loader.addEventListener('click', hideLoader);
+  loader.addEventListener('touchstart', hideLoader);
+})();
+
+// Snow
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const c = document.getElementById('snow-container');
+  const flakes = ['❄','❅','❆','•','*'];
+  const count = window.innerWidth < 768 ? 15 : 30;
+  for (let i = 0; i < count; i++) {
+    const f = document.createElement('div');
+    f.className = 'snowflake';
+    f.textContent = flakes[Math.floor(Math.random() * flakes.length)];
+    f.style.left = Math.random() * 100 + 'vw';
+    f.style.fontSize = (Math.random() * 1.2 + 0.6) + 'em';
+    f.style.animationDuration = (Math.random() * 10 + 8) + 's';
+    f.style.animationDelay = Math.random() * 10 + 's';
+    f.style.opacity = Math.random() * 0.6 + 0.3;
+    c.appendChild(f);
+  }
+})();
+
+// Mobile hero scroll-zoom — full cast shown small at top, zooms in as you scroll
+(function(){
+  const zoom = document.getElementById('hero-zoom');
+  const hero = document.getElementById('hero');
+  if (!zoom || !hero) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let ticking = false;
+  function update(){
+    ticking = false;
+    if (!window.matchMedia('(max-width: 768px)').matches || reduce.matches) {
+      zoom.style.transform = ''; return;
+    }
+    const h = hero.offsetHeight || window.innerHeight;
+    const p = Math.min(1, Math.max(0, window.scrollY / h));
+    zoom.style.transform = 'scale(' + (1 + p * 0).toFixed(3) + ')';
+  }
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
+})();
+
+// Promo video — click-to-play facade (fast load, sound on user gesture) + floating mini-player on scroll
+(function(){
+  const wrap = document.getElementById('promo-wrap');
+  const box = document.getElementById('promo-box');
+  const facade = document.getElementById('promo-facade');
+  const closeBtn = document.getElementById('promo-close');
+  const expandBtn = document.getElementById('promo-expand');
+  if (!wrap || !box || !facade) return;
+  const VIDEO_ID = 'aT99Q1iufB4';
+  let player = null, dismissed = false, started = false, io = null;
+
+  function startVideo(){
+    if (started) return;
+    started = true;
+    const iframe = document.createElement('iframe');
+    iframe.id = 'promo-iframe';
+    iframe.className = 'absolute inset-0 w-full h-full';
+    // autoplay here is allowed (user gesture) → sound plays
+    iframe.src = 'https://www.youtube.com/embed/' + VIDEO_ID + '?autoplay=1&playsinline=1&rel=0&enablejsapi=1';
+    iframe.title = 'العرض الترويجي لمسرحية من يوقظ الشمس';
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    iframe.setAttribute('allowfullscreen', '');
+    box.appendChild(iframe);
+    facade.remove();
+    loadApiThen(createPlayer);
+    setupObserver();
+  }
+
+  function loadApiThen(cb){
+    if (window.YT && window.YT.Player) { cb(); return; }
+    const prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function(){ if (typeof prev === 'function') prev(); cb(); };
+    if (!document.getElementById('yt-api')) {
+      const tag = document.createElement('script');
+      tag.id = 'yt-api'; tag.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(tag);
+    }
+  }
+
+  function createPlayer(){
+    player = new YT.Player('promo-iframe', {
+      events: {
+        onStateChange: function(e){
+          if (e.data === 0 && box.classList.contains('mini')) { dismissed = true; setMini(false); } // ended while mini
+        }
+      }
+    });
+  }
+
+  function isPlaying(){
+    try { return player && player.getPlayerState() === 1; }
+    catch(err) { return true; }
+  }
+
+  function setMini(on){
+    if (on) {
+      if (box.classList.contains('mini')) return;
+      wrap.style.height = box.offsetHeight + 'px';
+      box.classList.add('mini');
+    } else {
+      box.classList.remove('mini');
+      wrap.style.height = '';
+    }
+  }
+
+  function setupObserver(){
+    if (io) return;
+    io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { dismissed = false; setMini(false); }
+        else if (!dismissed && isPlaying()) { setMini(true); }
+      });
+    }, { threshold: 0 });
+    io.observe(wrap);
+  }
+
+  facade.addEventListener('click', startVideo);
+  facade.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); startVideo(); } });
+  closeBtn.addEventListener('click', (ev) => {
+    ev.stopPropagation(); dismissed = true;
+    try { player && player.pauseVideo(); } catch(err) {}
+    setMini(false);
+  });
+  expandBtn.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+})();
+
+// انشال العدّاد التنازلي: كان مربوط بتاريخ عرض واحد (24.06.2026) وبعد ما مرق
+// ظل يعرض 00:00:00:00 على الموقع الحيّ. الصفحة صارت تعرّف بالمسرحية وتحجزها
+// للروضات والمدارس بدل ما تبيع تذاكر لعرض معيّن.
+
+// Flip cards
+const flipped = new Set();
+document.querySelectorAll('.flip-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.remove('hint');
+    card.classList.toggle('flipped');
+    const id = card.dataset.char;
+    if (card.classList.contains('flipped')) flipped.add(id);
+    else flipped.delete(id);
+    document.getElementById('counter-num').textContent = flipped.size;
+    if (flipped.size === 6) {
+      const r = document.getElementById('all-revealed');
+      r.style.opacity = '1';
+      r.style.pointerEvents = 'auto';
+      r.style.transform = 'scale(1.02)';
+      setTimeout(() => r.style.transform = 'scale(1)', 400);
+      for (let i = 0; i < 30; i++) {
+        const f = document.createElement('div');
+        f.className = 'snowflake';
+        f.textContent = '✨';
+        f.style.left = Math.random() * 100 + 'vw';
+        f.style.fontSize = '1.5em';
+        f.style.animationDuration = '4s';
+        f.style.color = '#F5D78E';
+        document.getElementById('snow-container').appendChild(f);
+        setTimeout(() => f.remove(), 5000);
+      }
+    }
+  });
+});
+
+// Header scroll
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  const g = header.querySelector('.glass');
+  if (window.scrollY > 50) {
+    header.classList.add('shadow-2xl');
+    g.style.background = 'rgba(15,24,40,0.85)';
+  } else {
+    header.classList.remove('shadow-2xl');
+    g.style.background = '';
+  }
+});
+
+// Reveal on scroll — staggered 60ms per item within the same batch
+const observer = new IntersectionObserver((entries) => {
+  const visibleNow = entries.filter(e => e.isIntersecting);
+  visibleNow.forEach((e, i) => {
+    setTimeout(() => e.target.classList.add('visible'), i * 60);
+    observer.unobserve(e.target);
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Hint-flip the first character card on touch devices once
+(function(){
+  if (window.matchMedia('(hover: none)').matches &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const first = document.querySelector('.flip-card');
+    if (first) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            first.classList.add('hint');
+            setTimeout(() => first.classList.remove('hint'), 7000);
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+      io.observe(first);
+    }
+  }
+})();
+
+// FAQ
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+});
+
+
+// Lightbox — gallery + characters, with prev/next navigation
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCounter = document.getElementById('lightbox-counter');
+const lightboxNextBtn = document.getElementById('lightbox-next');
+const lightboxPrevBtn = document.getElementById('lightbox-prev');
+
+// Swap Google Drive thumbnail size for higher resolution when opening
+function hiResSrc(src) {
+  return src.replace(/sz=w\d+/, 'sz=w1600');
+}
+
+// Build groups so the user navigates within a coherent set
+const groups = {
+  gallery:    [...document.querySelectorAll('.gallery-item img')],
+  characters: [...document.querySelectorAll('.flip-card-back img:not(.silhouette)')],
+  other:      [...document.querySelectorAll('img[data-zoom]')]
+};
+
+function getGroupName(img) {
+  if (img.closest('.gallery-item')) return 'gallery';
+  if (img.closest('.flip-card-back')) return 'characters';
+  return 'other';
+}
+
+let currentGroup = null;
+let currentIndex = 0;
+
+function showImage(img) {
+  lightboxImg.src = hiResSrc(img.src);
+  lightboxImg.alt = img.alt || '';
+  lightbox.classList.remove('zoomed');
+  const list = groups[currentGroup] || [];
+  lightboxCounter.textContent = list.length > 1 ? `${currentIndex + 1} / ${list.length}` : '';
+}
+
+function openLightbox(img) {
+  currentGroup = getGroupName(img);
+  const list = groups[currentGroup];
+  currentIndex = Math.max(0, list.indexOf(img));
+  lightbox.classList.toggle('single-image', list.length <= 1);
+  showImage(list[currentIndex]);
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function navigate(delta) {
+  if (!currentGroup) return;
+  const list = groups[currentGroup];
+  if (list.length <= 1) return;
+  currentIndex = (currentIndex + delta + list.length) % list.length;
+  showImage(list[currentIndex]);
+}
+
+const zoomableSelector = '.gallery-item img, .flip-card-back img:not(.silhouette), img[data-zoom]';
+document.querySelectorAll(zoomableSelector).forEach(img => {
+  img.addEventListener('click', e => {
+    e.stopPropagation();
+    openLightbox(img);
+  });
+});
+
+// Nav buttons (RTL: next is on the left, prev on the right)
+lightboxNextBtn.addEventListener('click', e => { e.stopPropagation(); navigate(1); });
+lightboxPrevBtn.addEventListener('click', e => { e.stopPropagation(); navigate(-1); });
+
+// Click on image toggles zoom; click on backdrop closes
+lightbox.addEventListener('click', e => {
+  if (e.target === lightboxImg) {
+    lightbox.classList.toggle('zoomed');
+  } else if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  lightbox.classList.remove('zoomed');
+  document.body.style.overflow = '';
+  currentGroup = null;
+}
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape')     closeLightbox();
+  if (e.key === 'ArrowLeft')  navigate(1);   // RTL: left = next
+  if (e.key === 'ArrowRight') navigate(-1);  // RTL: right = previous
+});
+
+// Touch swipe on the image (RTL: swipe left = next, swipe right = prev)
+let touchStartX = 0, touchStartY = 0;
+lightboxImg.addEventListener('touchstart', e => {
+  if (lightbox.classList.contains('zoomed')) return;
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+lightboxImg.addEventListener('touchend', e => {
+  if (lightbox.classList.contains('zoomed')) return;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+    navigate(dx < 0 ? 1 : -1);
+  }
+}, { passive: true });
+
+// Copy link
+function copyLink() {
+  const url = 'https://elkhaialtheater.com';
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(showToast);
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = url; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta); showToast();
+  }
+}
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+</script>
+</body>
+</html>
