@@ -77,8 +77,14 @@ body.noscroll{overflow:hidden}
 #intro .ibar{position:absolute;inset-inline:0;height:11vh;background:#000}
 #intro .ibar.t{top:0}#intro .ibar.b{bottom:0}
 .istage{text-align:center;position:relative;padding:20px}
+/* لوجو المسرح بيفتح الافتتاحية — بيطلع أول إشي قبل الشمعة */
+.ilogo{display:block;width:clamp(64px,17vw,86px);height:auto;margin:0 auto 26px;
+  opacity:0;transform:translateY(10px) scale(.94);
+  animation:ilogoin .9s cubic-bezier(.2,.8,.25,1) .05s forwards;
+  filter:drop-shadow(0 0 26px rgba(224,122,62,.35))}
+@keyframes ilogoin{to{opacity:1;transform:none}}
 .iflame{width:26px;height:42px;margin-inline:auto;position:relative;transform:scale(0);
-  animation:ipop .55s cubic-bezier(.3,1.5,.4,1) .15s forwards}
+  animation:ipop .55s cubic-bezier(.3,1.5,.4,1) .55s forwards}
 .iflame::before{content:"";position:absolute;inset:0;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;
   background:radial-gradient(50% 62% at 50% 76%,#FFE9C4 0%,#FFB25E 42%,#E07A3E 72%,rgba(224,122,62,0) 100%);
   filter:blur(.6px);animation:idance .17s ease-in-out infinite alternate}
@@ -91,13 +97,21 @@ body.noscroll{overflow:hidden}
 .ititle{margin-top:30px;font-family:var(--f-disp);font-weight:700;font-size:clamp(36px,8vw,68px);line-height:1.3;
   background:linear-gradient(180deg,#FFC788,#E07A3E 55%,#8F3A18);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#E8894C;
-  opacity:0;transform:translateY(14px);animation:hin 1s ease .35s forwards}
+  opacity:0;transform:translateY(14px);animation:hin 1s ease .78s forwards}
 .isub{margin-top:8px;font-size:12.5px;font-weight:500;letter-spacing:.3em;color:var(--dim);
-  opacity:0;animation:hin .9s ease .65s forwards}
-.isub.itour{letter-spacing:.14em;color:var(--candle);animation-delay:.85s}
+  opacity:0;animation:hin .9s ease 1.05s forwards}
+.isub.itour{letter-spacing:.14em;color:var(--candle);animation-delay:1.25s}
 .isub.itour .tw{font-family:var(--f-mono);font-weight:700}
+/* مؤشّر التحميل — بيضل يمشي لحدّ ما تجهز صورة الهيرو */
+.iload{position:absolute;bottom:19vh;inset-inline:0;margin-inline:auto;width:104px;height:2px;
+  border-radius:2px;background:rgba(242,233,218,.13);overflow:hidden;
+  opacity:0;animation:hin .7s ease 1.15s forwards}
+.iload i{display:block;width:45%;height:100%;border-radius:2px;
+  background:linear-gradient(90deg,transparent,#FFB25E,transparent);
+  animation:iloadrun 1.25s ease-in-out infinite}
+@keyframes iloadrun{0%{transform:translateX(-115%)}100%{transform:translateX(330%)}}
 .iskip{position:absolute;bottom:13.5vh;inset-inline:0;text-align:center;font-size:12px;
-  color:rgba(201,184,162,.55);opacity:0;animation:hin 1s ease .7s forwards}
+  color:rgba(201,184,162,.7);opacity:0;animation:hin 1s ease 1.5s forwards}
 
 /* ════ فتيلة التقدّم ════ */
 #fuse{position:fixed;top:0;right:0;height:2px;width:0%;z-index:56;pointer-events:none;opacity:0;
@@ -147,7 +161,9 @@ header.solid{background:rgba(6,4,3,.92);backdrop-filter:blur(14px);border-bottom
 .btn.soon:hover{transform:none}
 
 /* ════ هيرو ════ */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;z-index:1}
+/* الحد الأدنى 640px: على شاشة أقصر من هيك المحتوى بينضغط لفوق وبيتداخل مع البادجات
+   المثبّتة بأعلى الهيرو. هيك بتصير الصفحة بتسكرول شوي بدل ما ينركب النص فوق بعضه. */
+.hero{position:relative;min-height:max(100svh,640px);display:flex;align-items:flex-end;overflow:hidden;z-index:1}
 .hero picture,.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%}
 .hero img.bg{transform:scale(1.09);will-change:transform;filter:brightness(1.11) saturate(1.05)}
 body.go .hero img.bg{animation:settle 2.8s cubic-bezier(.2,.6,.2,1) forwards}
@@ -189,6 +205,19 @@ body.go .hero img.bg{animation:settle 2.8s cubic-bezier(.2,.6,.2,1) forwards}
 @media(max-width:540px){
   .badges{flex-wrap:nowrap}
   .prange{display:none}
+}
+/* عالموبايل البادجات كانت بتقع على 50% من الشاشة — أسطع منطقة بالصورة (المشهد نفسه).
+   بنرفعهن للشريط الأسود الفاضي تحت الهيدر مباشرة (سطوعه ~1 من 255).
+   بما إنهن بيطلعوا من التدفّق، باقي النص بيضل بمكانه بالضبط لأنه مربوط بأسفل الهيرو. */
+@media(max-width:640px){
+  .hero .inner{align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end}
+  /* .wrap: static عشان الحاوية تصير .inner (وإلا النسبة بتتحسب من ارتفاع .wrap)،
+     وwidth:100% لأنه كـflex item مع margin-inline:auto بيزنّق عرضه للمحتوى ويزيح كل النص لجوّا */
+  .hero .inner .wrap{position:static;width:100%}
+  /* الحد الأدنى بالبكسل يحمي الشاشات القصيرة من إنه البادج يلزق بالهيدر.
+     flex-start = يمين بالـRTL — نفس حافة العنوان والأزرار بالضبط */
+  .hero .badges{position:absolute;top:max(12%,92px);inset-inline:0;z-index:3;
+    justify-content:flex-start;padding-inline:20px}
 }
 .pill .tw{font-family:var(--f-mono);font-weight:700;font-size:1.15em;color:var(--candle)}
 .stamp{font-family:var(--f-ui);font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--candle);
@@ -593,11 +622,13 @@ footer{border-top:1px solid var(--hair);padding-block:42px;position:relative;z-i
 <div id="intro" role="presentation" aria-hidden="true">
   <span class="ibar t"></span><span class="ibar b"></span>
   <div class="istage">
+    <img class="ilogo" src="images/logo.png" alt="" width="400" height="400" fetchpriority="high">
     <div class="iflame"></div>
     <div class="ititle">صعودًا للهاوية</div>
     <div class="isub">مسرح الخيال — الناصرة</div>
     <div class="isub itour">جولة بـ<span class="tw" dir="ltr">6</span> مدن — من <span class="tw" dir="ltr">2.9</span> لـ <span class="tw" dir="ltr">25.9</span></div>
   </div>
+  <div class="iload" aria-hidden="true"><i></i></div>
   <div class="iskip">اكبسوا بأي مكان للتخطي</div>
 </div>
 
@@ -1062,10 +1093,30 @@ var startTag=(function(){
   }
   if(REDUCED||seen){finish(true);return}
   document.body.classList.add('noscroll');
-  t=setTimeout(function(){finish(false)},1600);
-  intro.addEventListener('click',function(){clearTimeout(t);finish(false)});
+
+  /* الافتتاحية = شاشة تحميل: بتضل لحدّ ما تجهز صورة الهيرو، بس ضمن حدّين —
+     MIN عشان ما ترمش بسرعة على النت السريع، وCAP عشان ما تحبس الزائر على النت البطيء. */
+  var MIN=2400, CAP=7000, t0=Date.now(), capT;
+  var bg=document.querySelector('.hero img.bg');
+  function ready(){return !bg||(bg.complete&&bg.naturalWidth>0)}
+  function tryFinish(){
+    if(done)return;
+    var left=MIN-(Date.now()-t0);
+    if(left>0){t=setTimeout(tryFinish,left);return}
+    if(!ready())return;                 /* لسا بتحمّل — بنستنى حدث load أو الـCAP */
+    clearTimeout(capT);finish(false);
+  }
+  if(bg&&!ready()){
+    bg.addEventListener('load',tryFinish,{once:true});
+    bg.addEventListener('error',tryFinish,{once:true});
+  }
+  t=setTimeout(tryFinish,MIN);
+  capT=setTimeout(function(){finish(false)},CAP);
+
+  function skip(){clearTimeout(t);clearTimeout(capT);finish(false)}
+  intro.addEventListener('click',skip);
   addEventListener('keydown',function f(e){
-    if(e.key==='Escape'||e.key===' '||e.key==='Enter'){clearTimeout(t);finish(false);removeEventListener('keydown',f)}
+    if(e.key==='Escape'||e.key===' '||e.key==='Enter'){skip();removeEventListener('keydown',f)}
   });
 })();
 
