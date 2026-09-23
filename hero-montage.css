@@ -4,7 +4,32 @@
 .hero-montage img:nth-child(2){margin-top:4%;height:96%}
 .hero .veil{background:linear-gradient(to left,rgba(35,27,21,.9),rgba(35,27,21,.12) 42%,transparent 65%),linear-gradient(to top,var(--night),transparent 28%)}
 @media(max-width:760px){
- .hero-montage{left:3%;top:20%;width:94%;height:38%;gap:3px;mask-image:linear-gradient(to bottom,#000 80%,transparent 100%)}
+ .hero-montage{left:3%;top:max(20%,160px);width:94%;height:38%;gap:3px;mask-image:linear-gradient(to bottom,#000 80%,transparent 100%)}
  .hero-montage img{border-radius:65px 65px 0 0;object-position:50% 15%}
  .hero .veil{background:linear-gradient(to top,var(--night) 2%,rgba(35,27,21,.45) 32%,transparent 52%)}
+}
+
+@media(max-width:640px){
+ .hero .col{display:flex;flex-direction:column;align-items:flex-start}
+ .hero .col>h1{order:0}
+ .hero .badges{position:static;order:1;inset:auto;padding:0;margin:14px 0 0;width:100%;display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:8px}
+ .hero .col>.tag{order:2}
+ .hero .col>.cred{order:3}
+ .hero .col>.cta{order:4}
+ .hero .badges .pill{padding:7px 9px;font-size:11px;white-space:nowrap;gap:4px}
+ .hero .badges .stamp{padding:7px 8px;font-size:11px;letter-spacing:0;white-space:nowrap}
+ .hero-montage{top:12%;height:33%}
+}
+@media(max-width:360px){.hero .badges .pill,.hero .badges .stamp{font-size:10px;padding-inline:6px}}
+
+/* Phone title straddles the bottom edge of the photographs, below all faces. */
+@media(max-width:640px){
+ .hero{display:flex;flex-direction:column;align-items:stretch;min-height:100svh;padding:88px 0 90px}
+ .hero .inner,.hero .inner .wrap,.hero .col{display:contents}
+ .hero .col>h1{position:relative;order:3;width:90%;margin:-2.5em auto 0;font-size:clamp(54px,14vw,72px);z-index:1;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+ .hero .badges{position:relative;order:1;inset:auto;width:90%;margin:0 auto 14px;z-index:1}
+ .hero-montage{position:relative;order:2;left:auto;top:auto;flex:none;width:94%;height:clamp(280px,76vw,440px);margin:0 auto}
+ .hero .col>.tag{position:relative;order:4;max-width:none;width:90%;margin:16px auto 0;z-index:1}
+ .hero .col>.cred{position:relative;order:5;width:90%;margin:16px auto 0;z-index:1}
+ .hero .col>.cta{position:relative;order:6;width:90%;margin:24px auto 0;z-index:1}
 }
