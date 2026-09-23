@@ -1,0 +1,10 @@
+/* Real photographs arranged in the page; preserve the original title and effects. */
+.hero-montage{position:absolute;left:3%;top:14%;width:61%;height:78%;display:flex;direction:ltr;gap:4px;mask-image:linear-gradient(to bottom,#000 72%,transparent 100%)}
+.hero-montage img{position:relative;display:block;width:33.333%;min-width:0;height:100%;object-fit:cover;object-position:50% 20%;border-radius:110px 110px 0 0}
+.hero-montage img:nth-child(2){margin-top:4%;height:96%}
+.hero .veil{background:linear-gradient(to left,rgba(35,27,21,.9),rgba(35,27,21,.12) 42%,transparent 65%),linear-gradient(to top,var(--night),transparent 28%)}
+@media(max-width:760px){
+ .hero-montage{left:3%;top:20%;width:94%;height:38%;gap:3px;mask-image:linear-gradient(to bottom,#000 80%,transparent 100%)}
+ .hero-montage img{border-radius:65px 65px 0 0;object-position:50% 15%}
+ .hero .veil{background:linear-gradient(to top,var(--night) 2%,rgba(35,27,21,.45) 32%,transparent 52%)}
+}
